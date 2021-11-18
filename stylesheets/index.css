@@ -4,7 +4,7 @@
 }
 
 body {
-  padding: 3em 3em;
+  padding: 3em 3em 0em 3em;
   margin: 0;
   font-family: DM Sans;
 }
@@ -74,14 +74,12 @@ main #main-photographers-button {
 main #photographers {
   margin-top: 4em;
   display: flex;
-  background-color: beige;
   flex-flow: row wrap;
   width: auto;
   justify-content: space-around;
 }
 main #photographers div {
   margin-bottom: 2em;
-  background-color: lightgreen;
   text-align: center;
   width: 25vw;
   flex-flow: column wrap;
@@ -95,6 +93,7 @@ main #photographers div a img {
   object-fit: cover;
   overflow: hidden;
   border-radius: 10em;
+  box-shadow: 0px 3px 10px grey;
 }
 main #photographers div a h2 {
   margin: 0;
@@ -123,10 +122,28 @@ main #photographers div .price {
   font-size: 0.6em;
   color: grey;
 }
+main #photographers div .filter {
+  margin: 0;
+  margin-top: 0.5em;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+main #photographers div .filter li {
+  margin-right: 5px;
+  padding: 2px 10px;
+  border: 1px solid lightgrey;
+  border-radius: 1em;
+  font-size: 0.7em;
+  font-weight: 500;
+  color: #901C1C;
+}
 
 @media (max-width: 700px) {
   body {
-    padding: 2em 1.5em;
+    padding: 2em 1.5em 1em 1.5em;
   }
 
   header {
@@ -141,12 +158,10 @@ main #photographers div .price {
   }
   header nav {
     order: 2;
-    width: 100%;
     margin-top: 1.5em;
     margin-bottom: 2.5em;
     margin-right: 2em;
     margin-left: 2em;
-    line-height: 1.8em;
   }
   header h1 {
     order: 1;
@@ -161,13 +176,12 @@ main #photographers div .price {
     justify-content: center;
   }
   main #photographers div {
-    background-color: lightblue;
     width: auto;
   }
 }
 @media (min-width: 701px) and (max-width: 1000px) {
   body {
-    padding: 2em 1.5em;
+    padding: 2em 1.5em 1em 1.5em;
   }
 
   header {
@@ -182,12 +196,10 @@ main #photographers div .price {
   }
   header nav {
     order: 2;
-    width: 100%;
     margin-top: 1.5em;
     margin-bottom: 2.5em;
     margin-right: 2em;
     margin-left: 2em;
-    line-height: 1.8em;
   }
   header h1 {
     order: 1;
@@ -197,10 +209,9 @@ main #photographers div .price {
   }
 
   main #photographers {
-    margin-top: 3em;
+    margin-top: 1em;
   }
   main #photographers div {
-    background-color: lightpink;
     width: 40vw;
   }
 }

@@ -10,18 +10,17 @@ const fetchData = async () => {
 
       for(let i in allPhotographers){
 
-         let portfolioName = allPhotographers[i].name.replace(/[\W_]/g, "");
-
          photographersSection.innerHTML += 
 
          `
          <div>
-            <a href="photographers/${portfolioName}.html" title="${allPhotographers[i].name}">
+            <a href="photographers.html" title="${allPhotographers[i].name}">
             <img src="images/portraits/${allPhotographers[i].portrait}"></img>
             </br><h2>${allPhotographers[i].name}</h2></a>
             <p class="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
             <p class="tagline">${allPhotographers[i].tagline}</p>
             <p class="price">${allPhotographers[i].price}€/jour</p>
+            <ul class="filter">${allPhotographers[i].tags.map(tag => `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul> 
          </div>
          
          `;
@@ -29,7 +28,7 @@ const fetchData = async () => {
       return photographersSection;
    })
    .catch (function(){
-      console.log("erreur fetch");
+      console.log("Erreur fetch !");
    })
 } 
 
