@@ -3,8 +3,12 @@
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 body {
-  padding: 3em 3em 0em 3em;
+  padding: 2em 3em 0em 3em;
   margin: 0;
   font-family: DM Sans;
 }
@@ -34,7 +38,7 @@ header nav {
   margin-left: 5em;
   line-height: 1.8em;
 }
-header nav a {
+header nav button {
   padding: 2px 10px;
   border: 1px solid lightgrey;
   border-radius: 1em;
@@ -42,8 +46,9 @@ header nav a {
   font-weight: 500;
   text-decoration: none;
   color: #901C1C;
+  background-color: white;
 }
-header nav :hover {
+header nav :hover, header nav .active {
   background-color: #901C1C;
   color: white;
 }
@@ -129,7 +134,6 @@ main #photographers div .filter {
   display: flex;
   justify-content: center;
   list-style-type: none;
-  flex-wrap: wrap;
 }
 main #photographers div .filter li {
   margin-right: 5px;
@@ -198,8 +202,8 @@ main #photographers div .filter li {
     order: 2;
     margin-top: 1.5em;
     margin-bottom: 2.5em;
-    margin-right: 2em;
-    margin-left: 2em;
+    margin-right: auto;
+    margin-left: auto;
   }
   header h1 {
     order: 1;

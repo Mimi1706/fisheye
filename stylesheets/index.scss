@@ -5,6 +5,10 @@
     display:flex;
 }
 
+.hidden{
+    display: none;
+}
+
 // COULEURS
 $primary-color: #901C1C;
 $secondary-color: #D3573C;
@@ -13,7 +17,7 @@ $secondary-color: #D3573C;
 
 // BODY - VERSION DESKTOP
 body{
-    padding: 3em 3em 0em 3em;
+    padding: 2em 3em 0em 3em;
     margin: 0;
     font-family: DM Sans;
 }
@@ -47,7 +51,7 @@ header{
         margin-left:5em;
         line-height: 1.8em;
 
-        a{
+        button{
             padding:2px 10px;
             border: 1px solid lightgrey;
             border-radius: 1em;
@@ -55,9 +59,10 @@ header{
             font-weight: 500;
             text-decoration: none;
             color:$primary-color;
+            background-color: white;
         }
 
-        :hover{
+        :hover, .active{
             background-color: $primary-color;
             color: white;
         }
@@ -104,6 +109,7 @@ main{
             text-align: center;
             width: 25vw;
             flex-flow: column wrap;
+
 
             a{
                 text-decoration: none;
@@ -156,7 +162,6 @@ main{
                 display: flex;
                 justify-content: center;
                 list-style-type: none;
-                flex-wrap: wrap;
 
                 li{
                     margin-right: 5px;
@@ -247,8 +252,8 @@ main{
             order: 2; 
             margin-top:1.5em;
             margin-bottom:2.5em;
-            margin-right: 2em;
-            margin-left:2em;
+            margin-right: auto;
+            margin-left:auto;
         }
 
         h1 { 
