@@ -20,7 +20,7 @@ const fetchData = async () => {
             <p class="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
             <p class="tagline">${allPhotographers[i].tagline}</p>
             <p class="price">${allPhotographers[i].price}€/jour</p>
-            <ul class="filter">${allPhotographers[i].tags.map(tag => `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul> 
+            <ul class="filter">${allPhotographers[i].tags.map(tag => `<li "${tag}">#${tag}</li>`).join(" ")}</ul> 
          </div>
          
          `;
