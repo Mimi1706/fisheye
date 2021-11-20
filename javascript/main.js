@@ -56,25 +56,35 @@ addFiltersValue();
 let listOfPhFilters = document.getElementsByClassName('photographer');
 
 function matchFilters(thisFilter){
-   for(let i=0;i<listOfPhFilters.length;i++){
+   for(let i=0; i<listOfPhFilters.length;i++){
       if(listOfPhFilters[i].className.indexOf(thisFilter)==-1) {
-         listOfPhFilters[i].classList.add('hidden')
+         listOfPhFilters[i].classList.add('hidden');
       } 
    }
 }
 
-// Rendre le bouton des filtres actifs
+// Enlève les profils qui n'ont pas les tags actifs
+function unmatchFilters(){
+
+   let activeFilters = document.querySelectorAll('.active');
+
+   for(let i=0, x=0; activeFilters.length>i, listOfPhFilters.length>x; i++, x++){
+
+      if (listOfPhFilters[x].contains(activeFilters[i])){
+         listOfPhFilters[x].classList.remove('hidden');
+      }
+
+   }
+}
+
+// Actionne les fonctions selon si le filtre est actif ou non
 listOfFilters.forEach(filterButton => filterButton.addEventListener('click', 
 function() {
    this.classList.toggle('active');
 
-   matchFilters(filterButton.classList[0]);
-   console.log(filterButton.classList[0]);
+   if (filterButton.classList.contains('active')){
+      matchFilters(filterButton.classList[0]);
+   } else {
+      unmatchFilters();
+   }
 }));
-
-
-
-
-
-
-
