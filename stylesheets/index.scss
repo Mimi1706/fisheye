@@ -17,8 +17,8 @@ $secondary-color: #D3573C;
 
 // BODY - VERSION DESKTOP
 body{
-    padding: 2em 3em 0em 3em;
-    margin: 0;
+    margin: 2em 3em 0em 3em;
+    padding: 0;
     font-family: DM Sans;
 }
 
@@ -180,9 +180,10 @@ main{
 // VERSION MOBILE
 @media (max-width: 700px){
     body{
-        padding: 2em 1.5em 1em 1.5em;
+        margin: 2em 1.5em 1em 1.5em;
     }
 
+    // HEADER - VERSION MOBILE
     header{
 
         flex-wrap: wrap;
@@ -228,13 +229,14 @@ main{
     }
 }
 
-
 // VERSION TABLETTE
 @media (min-width: 701px) and (max-width:1000px){
     body{
-        padding: 2em 1.5em 1em 1.5em;
+        margin: 2em 1.5em 1em 1.5em;
+        padding:0;
     }
 
+    // HEADER - VERSION TABLETTE
     header{
 
         flex-wrap: wrap;

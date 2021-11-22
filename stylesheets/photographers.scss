@@ -1,0 +1,155 @@
+// GENERAL
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+
+.flex{
+    display:flex;
+}
+
+.hidden{
+    display: none;
+}
+
+// COULEURS
+$primary-color: #901C1C;
+$secondary-color: #D3573C;
+
+// FORMULAIRE
+#form{
+    background-color: $secondary-color;
+    padding: 1em 1.5em;
+    width: 450px;
+    margin: 2em auto;
+    border-radius: 0.3em;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:2em;
+    box-shadow: -3px 3px 15px grey; 
+    display: none;
+
+    div:nth-child(1){
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        overflow: hidden;
+        right:20px;
+
+        .close-btn{
+            font-size: 4em;
+            color: white;
+            cursor: pointer;
+            top:-30px;
+            position: absolute;
+        }
+    }
+
+    h1{
+        margin:0;
+        padding:0;
+        padding-bottom:0.5em;
+        font-weight: 200;
+    }
+
+    div{
+        width: 100%;
+        padding: 0em;
+        margin: 0em;
+
+        label{
+            margin-top:10em;
+            font-size: 1.3em;
+        }
+
+        input{
+            width: 100%;
+            height: auto;
+            margin-bottom:0.5em;
+            border:none;
+            border-radius:0.2em;
+            font-size: 1.2em;
+            padding: 0.5em;
+            box-sizing: border-box;  
+        }
+    }
+
+    div:nth-child(6){
+        textarea{
+            resize: none;
+            width: 100%;
+            height: 6em;
+            border-radius: 0.2em;
+            padding: 0.2em 0.5em;
+            border:none;
+            box-sizing: border-box;  
+            font-size: 1.2em;
+            font-family: DM Sans;
+        }
+    }
+
+    .submit-btn{
+        background-color: $primary-color;
+        padding:1.3em 2.7em;
+        border-radius: 0.3em;
+        border:none;
+        color:white;
+        font-size: 0.8em;
+        margin-top:1em;
+        margin-bottom:1em;
+        cursor: pointer;
+    }
+}
+
+// VERSION MOBILE
+@media (max-width: 700px){
+
+    // FORMULAIRE - VERSION MOBILE
+    #form{
+        box-sizing: border-box; 
+        top:0;
+        margin:0;
+        width: auto;
+        height: 100%;
+        border-radius: 0;
+        resize: none;
+    
+        h1{
+            margin:0;
+            padding:0;
+            padding-bottom:0.5em;
+            font-weight: 200;
+        }
+    
+        div{
+            input{
+                margin-bottom:0.7em;
+                margin-top:0.4em;
+            }
+        }
+    
+        div:nth-child(6){
+            textarea{
+                margin-top:0.4em;
+                height: 9em;
+            }
+        }
+    
+        .submit-btn{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:2em;
+            right:0;
+            left:0;
+            position: absolute;
+            padding:0.5em 2.7em;
+        }
+    }
+}
+
+// VERSION TABLETTE
+@media (min-width: 701px) and (max-width:1000px){
+
+    // FORMULAIRE - VERSION MOBILE
+    #form{
+        margin-top:5em;
+    }
+}

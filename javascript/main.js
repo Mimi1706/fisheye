@@ -63,28 +63,28 @@ function matchFilters(thisFilter){
    }
 }
 
-// Enlève les profils qui n'ont pas les tags actifs
-function unmatchFilters(){
-
-   let activeFilters = document.querySelectorAll('.active');
-
-   for(let i=0, x=0; activeFilters.length>i, listOfPhFilters.length>x; i++, x++){
-
-      if (listOfPhFilters[x].contains(activeFilters[i])){
-         listOfPhFilters[x].classList.remove('hidden');
-      }
-
-   }
-}
-
 // Actionne les fonctions selon si le filtre est actif ou non
 listOfFilters.forEach(filterButton => filterButton.addEventListener('click', 
 function() {
    this.classList.toggle('active');
 
+   let activeFilters = document.querySelectorAll('.active');
+
    if (filterButton.classList.contains('active')){
-      matchFilters(filterButton.classList[0]);
+      for(let x=0; listOfPhFilters.length>x; x++){
+
+         if (listOfPhFilters[x].className.indexOf(filterButton.classList[0])==-1){
+            listOfPhFilters[x].classList.add('hidden');
+         }
+      }
+      
    } else {
-      unmatchFilters();
+      
+      for(let x=0; listOfPhFilters.length>x; x++){
+
+         if (listOfPhFilters[x].className.indexOf(activeFilters)){
+            listOfPhFilters[x].classList.remove('hidden');
+         } 
+      }
    }
 }));

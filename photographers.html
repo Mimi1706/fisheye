@@ -20,6 +20,28 @@
 
     <section id="photographer-profil"></section>
 
+
+    <!-- FORMULAIRE -->
+    <form id="form">
+        <div><span onclick="closeForm('none')" class="close-btn">&#215;</span></div>
+
+        <h1>Contactez-moi</h1>
+        
+        <div><label for="firstName">Prénom</label></br>
+        <input type="text" name="firstName" id="firstName-field" input="firstName"></div>
+
+        <div><label for="lastName">Nom</label></br>
+        <input type="text" name="lastName" id="lastName-field" input="lastName"></div>
+
+        <div><label for="email">Email</label></br>
+        <input type="text" name="mail" id="email-field" input="mail"></div>
+
+        <div><label for="message">Votre message</label></br>
+        <textarea type="text" name="message" id="message-field" input="message"></textarea></div>
+
+        <input type="submit" id="submit-btn" class="submit-btn" value="Envoyer"/>
+    </form>
+
     <script src="javascript/photographer-profil.js"> </script>
 
 </body>
