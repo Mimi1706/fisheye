@@ -17,7 +17,7 @@ const fetchData = async () => {
 
          `
          <div class="${allPhotographers[i].tags.join(" ")} photographer">
-            <a href="photographers/${allPhotographers[i].id}.html" title="${allPhotographers[i].name}">
+            <a href="photographers.html?id=${allPhotographers[i].id}" title="${allPhotographers[i].name}">
             <img src="images/portraits/${allPhotographers[i].portrait}"></img>
             </br><h2>${allPhotographers[i].name}</h2></a>
             <p class="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
@@ -31,7 +31,7 @@ const fetchData = async () => {
       return photographersSection;
    })
 
-   // Message d'erreur s'il y a un problème 
+   // Message d'erreur s'il y a un problème fetch
    .catch (function(){
       console.log("Erreur fetch !");
    })
@@ -39,10 +39,10 @@ const fetchData = async () => {
 
 fetchData();
 
-// Ajoute leur classe respectives aux filtres de navigation
+// Ajoute leur classe respective aux filtres de navigation
 let listOfFilters = document.querySelectorAll('nav button');
 
-function addFiltersValue(){
+function addClassToFilters(){
    for(let i=0; listOfFilters[i]; i++){
       let filterName = listOfFilters[i].innerHTML.substring(1);
       let filterNameSmall = filterName.toLowerCase();
@@ -50,9 +50,9 @@ function addFiltersValue(){
    }   
 }
 
-addFiltersValue();
+addClassToFilters();
 
-// Actionne les fonctions selon si le filtre est actif ou non et match les profils des photographes selon leurs tags
+// Actionne les filtres
 let listOfPhFilters = document.getElementsByClassName('photographer');
 
 listOfFilters.forEach(filterButton => filterButton.addEventListener('click', 
@@ -72,7 +72,7 @@ function() {
       this.classList.add('active');
    }
 
-   // Filtre les profils selon si leurs tags match avec les filtres
+   // Cache les profils qui ne correspondent pas avec les filtres
    let activeFilters = document.getElementsByClassName('active');
 
    for(let activeFilter of activeFilters){

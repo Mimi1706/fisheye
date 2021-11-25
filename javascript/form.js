@@ -1,10 +1,12 @@
 // FORMULAIRE
 const closeBtn = document.getElementsByClassName('close-btn');
 const formWindow = document.getElementById('form');
+const formBg = document.getElementById('form-bg');
 
     //BOUTON DE FERMETURE 
     function closeForm(displayStyle){
         formWindow.style.display = displayStyle;
+        formBg.style.display = 'none';
     }
 
     //CHAMPS DU FORMULAIRE
@@ -13,13 +15,12 @@ const formWindow = document.getElementById('form');
         const isValueValid = firstName.value.trim().length >= 2 && firstName.value.match(/^[A-Za-z]+$/);
 
         if (isValueValid) {
-            firstName.style.backgroundColor = 'white';
-            firstName.style.color = 'black';
-            return true;
+
+            return firstName;
 
         } else {
-            firstName.style.backgroundColor = '#a60000';
-            firstName.style.color = 'white';
+            firstName.style.border = '5px solid #901C1C';
+            firstName.style.color = 'black';
         }
     }
 
@@ -28,13 +29,12 @@ const formWindow = document.getElementById('form');
         const isValueValid = lastName.value.trim().length >= 2 && lastName.value.match(/^[A-Za-z]+$/);
 
         if (isValueValid) {
-            lastName.style.backgroundColor = 'white';
-            lastName.style.color = 'black';
-            return true;
+
+            return lastName;
 
         } else {
-            lastName.style.backgroundColor = '#a60000';
-            lastName.style.color = 'white';
+            lastName.style.border = '5px solid #901C1C';
+            lastName.style.color = 'black';
         }
     }
 
@@ -43,13 +43,12 @@ const formWindow = document.getElementById('form');
         const validMail = /\S+@\S+\.\S+/;
         
         if (validMail.test(email)){
-            document.getElementById('email-field').style.backgroundColor = 'white';
-            document.getElementById('email-field').style.color = 'black';
-            return true;
+
+            return email;
             
         } else {
-            document.getElementById('email-field').style.backgroundColor = '#a60000';
-            document.getElementById('email-field').style.color = 'white';
+            document.getElementById('email-field').style.border = '5px solid #901C1C';
+            document.getElementById('email-field').style.color = 'black';
         }
     }
 
@@ -58,13 +57,12 @@ const formWindow = document.getElementById('form');
         const isValueValid = message.value.trim().length >= 5;
 
         if (isValueValid) {
-            message.style.backgroundColor = 'white';
-            message.style.color = 'black';
-            return true;
+
+            return message;
 
         } else {
-            message.style.backgroundColor = '#a60000';
-            message.style.color = 'white';
+            message.style.border = '5px solid #901C1C';
+            message.style.color = 'black';
         }
     }
 
