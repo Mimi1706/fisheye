@@ -12,13 +12,13 @@ const fetchData = async () => {
        let allPhotographers = dataJson.photographers;
  
        for(let i in allPhotographers){
- 
-        photographersProfil.innerHTML += 
- 
-          `
+
+            photographersProfil.innerHTML += 
+            `
+               
             
-          
-          `;
+            `;
+
        }
        return photographersProfil;
     })

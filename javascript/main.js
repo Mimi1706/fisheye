@@ -1,6 +1,6 @@
+// Récupère le fichier JSON grâce à un lien
 let photographersSection = document.getElementById("photographers");
 
-// Récupère le fichier JSON grâce à un lien
 const fetchData = async () => {
    return await fetch("https://raw.githubusercontent.com/Mimi1706/HanNguyen_6_021121/main/javascript/fisheye.json")
    .then(function(response){
@@ -17,7 +17,7 @@ const fetchData = async () => {
 
          `
          <div class="${allPhotographers[i].tags.join(" ")} photographer">
-            <a href="photographers.html" title="${allPhotographers[i].name}">
+            <a href="photographers/${allPhotographers[i].id}.html" title="${allPhotographers[i].name}">
             <img src="images/portraits/${allPhotographers[i].portrait}"></img>
             </br><h2>${allPhotographers[i].name}</h2></a>
             <p class="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
@@ -52,38 +52,35 @@ function addFiltersValue(){
 
 addFiltersValue();
 
-// Matcher les profils des photographes selon leurs tags
+// Actionne les fonctions selon si le filtre est actif ou non et match les profils des photographes selon leurs tags
 let listOfPhFilters = document.getElementsByClassName('photographer');
 
-function matchFilters(thisFilter){
-   for(let i=0; i<listOfPhFilters.length;i++){
-      if(listOfPhFilters[i].className.indexOf(thisFilter)==-1) {
-         listOfPhFilters[i].classList.add('hidden');
-      } 
-   }
-}
-
-// Actionne les fonctions selon si le filtre est actif ou non
 listOfFilters.forEach(filterButton => filterButton.addEventListener('click', 
 function() {
-   this.classList.toggle('active');
 
-   let activeFilters = document.querySelectorAll('.active');
+   // Désactive visuellement le filtre s'il est déjà activé
+   if (this.classList[1]=='active'){
+      this.classList.remove('active');
 
-   if (filterButton.classList.contains('active')){
-      for(let x=0; listOfPhFilters.length>x; x++){
-
-         if (listOfPhFilters[x].className.indexOf(filterButton.classList[0])==-1){
-            listOfPhFilters[x].classList.add('hidden');
-         }
+      // Affiche tous les profils à chaque fois qu'on désactive un filtre
+      for(let i = 0; i<listOfPhFilters.length; i++ ){
+         listOfPhFilters[i].classList.remove('hidden');
       }
-      
-   } else {
-      
-      for(let x=0; listOfPhFilters.length>x; x++){
 
-         if (listOfPhFilters[x].className.indexOf(activeFilters)){
-            listOfPhFilters[x].classList.remove('hidden');
+   // Active visuellement le filtre
+   } else {
+      this.classList.add('active');
+   }
+
+   // Filtre les profils selon si leurs tags match avec les filtres
+   let activeFilters = document.getElementsByClassName('active');
+
+   for(let activeFilter of activeFilters){
+
+      for(let i = 0; i<listOfPhFilters.length; i++ ){
+
+         if(!listOfPhFilters[i].className.includes(activeFilter.classList[0])){
+            listOfPhFilters[i].classList.add('hidden');
          } 
       }
    }
