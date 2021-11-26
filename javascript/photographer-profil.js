@@ -1,5 +1,5 @@
 // Récupère l'id du profil dans l'URL
-let photographerId = (new URL(document.location)).searchParams.get('id');
+let photographerIdUrl = (new URL(document.location)).searchParams.get('id');
 
 // Récupère le fichier JSON grâce à un lien
 const fetchData = async () => {
@@ -11,15 +11,18 @@ const fetchData = async () => {
    // Génère le profil correspondant à l'id dans l'URL
    .then (function(dataJson){
       let allPhotographers = dataJson.photographers;
+      let allMedia = dataJson.media;
+      
       let photographerBanner = document.getElementById('photographer-banner');
+      let allMediaContent = document.getElementById('media-content');
 
+      // Vérifie l'identité du photographe et génère sa bannière
       for(let i in allPhotographers){
 
-         if(`${allPhotographers[i].id}` == photographerId){
+         if(`${allPhotographers[i].id}` == photographerIdUrl){
             photographerBanner.innerHTML += 
-
             `
-               <img src="images/portraits/${allPhotographers[i].portrait}"></img>
+               <img src="content/portraits/${allPhotographers[i].portrait}"></img>
 
                <h1>${allPhotographers[i].name}</h1>
                <p class="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
@@ -28,6 +31,41 @@ const fetchData = async () => {
             `;
          }
 
+         // Génère le contenu media du photographe
+         for(let x in allMedia){
+
+            if(`${allPhotographers[i].id}` == photographerIdUrl && `${allPhotographers[i].id}` == `${allMedia[x].photographerId}`){
+
+               // Vérifie si le media est une image de format jpg
+               if(/\.jpe?g$/i.test(`${allMedia[x].image}`)){
+                  allMediaContent.innerHTML +=
+                  `
+                     <div class="media-piece">
+                     <img src="content/media/${allPhotographers[i].id}/${allMedia[x].image}"></img>
+                     <div class="info">
+                     <h2>${allMedia[x].title}</h2>
+                     <span>${allMedia[x].likes}</span>
+                     <span id="heart">&#9829</span>
+                     </div>
+                     </div>
+                  `;
+
+               // Vérifie si le media est une vidéo 
+               } else {
+                  allMediaContent.innerHTML +=
+                  `
+                     <div class="media-piece">
+                     <video><source src="content/media/${allPhotographers[i].id}/${allMedia[x].video}"></video>
+                     <div class="info">
+                     <h2>${allMedia[x].title}</h2>
+                     <span>${allMedia[x].likes}</span>
+                     <span id="heart">&#9829</span>
+                     </div>
+                     </div>
+                  `;
+               }
+            } 
+         }
       }
    })
 

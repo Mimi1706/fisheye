@@ -20,13 +20,13 @@ $secondary-color: #D3573C;
     main{
 
         #photographer-banner{
-            margin-top: 1em;
             background-color: rgb(243, 243, 243);
             display: flex;
             flex-direction: column;
             padding:3.5em 3em;
             height: auto;
             margin-top:2em;
+            margin-bottom:3em;
 
             img{
                 height:11.5em;
@@ -47,6 +47,7 @@ $secondary-color: #D3573C;
                 font-weight: 300;
                 font-size: 3.5em;
                 color: $secondary-color;
+                width: 40vw;
             }
 
             .location{
@@ -97,10 +98,60 @@ $secondary-color: #D3573C;
             width: 10em;
             height: auto;
             top:11em;
-            margin-left: 22em;
+            margin-left: 45vw;
+            z-index:1;
         }
 
+        #media-content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-bottom:3em;
 
+            .media-piece{
+                img, video{
+                    height:20em;
+                    width: 20em;
+                    object-fit: cover;
+                    overflow: hidden;
+                    padding: 0;
+                    margin: 0;
+                    border-radius: 0.3em;
+                }
+
+                .info{
+                    display: flex;
+                    position: relative;
+                    margin-bottom:1em;
+                    vertical-align: middle;
+                    margin-top:0.5em;
+
+                    h2{
+                        margin: 0;
+                        padding: 0;
+                        font-weight: 100;
+                        font-size: 1em;
+                        color:$primary-color;
+                        width: 14em;
+                    }
+    
+                    span{
+                        text-align: right;
+                        margin-left:3em;  
+                        color:$primary-color;                   
+                    }
+
+                    #heart{
+                        margin-left:0.3em;
+                        font-size: 1.2em;
+                        vertical-align: middle;
+                        font-family: -apple-system;
+                        line-height: 1em;
+                        color:$primary-color;
+                    }
+                }
+            }
+        }
     }
 
     // FORMULAIRE
@@ -212,6 +263,7 @@ $secondary-color: #D3573C;
         #photographer-banner{
             background-color: white;
             padding:0;
+            margin-bottom:0em;
 
             img{
                 height:8.5em;
@@ -256,6 +308,25 @@ $secondary-color: #D3573C;
             top:93vh;
             margin-left: 20vw;
             will-change: transform;
+        }
+
+        #media-content{
+            justify-content: center;
+            align-items: stretch;
+            width: 100%;
+
+            .media-piece{
+                img, video{
+                    height:14em;
+                    width: 89vw;
+                }
+
+                .info{    
+                    span{
+                        margin-left:8em;                     
+                    }
+                }
+            }
         }
     }
 
@@ -304,33 +375,40 @@ $secondary-color: #D3573C;
 }
 
 // VERSION TABLETTE
-@media (min-width: 701px) and (max-width:1000px){
+@media (min-width: 701px) and (max-width:1100px){
 
-        // MAIN - VERSION TABLETTE
-        main{
+    // MAIN - VERSION TABLETTE
+    main{
 
-            #photographer-banner{
-    
-                img{
-                    right:4em;
-                }
+        #photographer-banner{
 
-                h1{
-                    font-size: 3em;
-                }
-            }   
+            margin-bottom:0em;
 
-            #contact{
-                padding: 0.7em 0.5em;
-                font-size: 1em;
-                position: -webkit-sticky;
-                position: sticky;
-                width: 12em;
-                top:93vh;
-                margin-left: 35vw;
-                will-change: transform;
+            img{
+                right:4em;
             }
+
+            h1{
+                font-size: 3em;
+                width: 60vw;
+            }
+        }   
+
+        #contact{
+            padding: 0.7em 0.5em;
+            font-size: 1em;
+            position: -webkit-sticky;
+            position: sticky;
+            width: 12em;
+            top:93vh;
+            margin-left: 35vw;
+            will-change: transform;
         }
+
+        #media-content{
+            justify-content: space-around;
+        }
+    }
 
     // FORMULAIRE - VERSION MOBILE
     #form{

@@ -15,11 +15,12 @@ const formBg = document.getElementById('form-bg');
         const isValueValid = firstName.value.trim().length >= 2 && firstName.value.match(/^[A-Za-z]+$/);
 
         if (isValueValid) {
-
+            firstName.style.border = 'none';
+            firstName.style.color = 'black';
             return firstName;
 
         } else {
-            firstName.style.border = '5px solid #901C1C';
+            firstName.style.border = '3px solid #901C1C';
             firstName.style.color = 'black';
         }
     }
@@ -29,11 +30,12 @@ const formBg = document.getElementById('form-bg');
         const isValueValid = lastName.value.trim().length >= 2 && lastName.value.match(/^[A-Za-z]+$/);
 
         if (isValueValid) {
-
+            lastName.style.border = 'none';
+            lastName.style.color = 'black';
             return lastName;
 
         } else {
-            lastName.style.border = '5px solid #901C1C';
+            lastName.style.border = '3px solid #901C1C';
             lastName.style.color = 'black';
         }
     }
@@ -43,11 +45,12 @@ const formBg = document.getElementById('form-bg');
         const validMail = /\S+@\S+\.\S+/;
         
         if (validMail.test(email)){
-
+            document.getElementById('email-field').style.border = 'none';
+            document.getElementById('email-field').style.color = 'black';
             return email;
             
         } else {
-            document.getElementById('email-field').style.border = '5px solid #901C1C';
+            document.getElementById('email-field').style.border = '3px solid #901C1C';
             document.getElementById('email-field').style.color = 'black';
         }
     }
@@ -57,11 +60,12 @@ const formBg = document.getElementById('form-bg');
         const isValueValid = message.value.trim().length >= 5;
 
         if (isValueValid) {
-
+            message.style.border = 'none';
+            message.style.color = 'black';
             return message;
 
         } else {
-            message.style.border = '5px solid #901C1C';
+            message.style.border = '3px solid #901C1C';
             message.style.color = 'black';
         }
     }
@@ -86,5 +90,7 @@ const formBg = document.getElementById('form-bg');
             console.log('Votre message:',document.getElementById('message-field').value);
 
             form.reset();
-        } 
+        } else {
+            
+        }
     });
