@@ -36,7 +36,6 @@ $secondary-color: #D3573C;
                 border-radius: 10em;
                 box-shadow: 0px 3px 10px grey; ;
                 position: absolute;
-
                 right:7em;
                 vertical-align: middle;
             }
@@ -105,13 +104,13 @@ $secondary-color: #D3573C;
         #media-content{
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-around;
             padding-bottom:3em;
 
             .media-piece{
                 img, video{
-                    height:20em;
-                    width: 20em;
+                    height:19em;
+                    width: 19em;
                     object-fit: cover;
                     overflow: hidden;
                     padding: 0;
@@ -123,8 +122,8 @@ $secondary-color: #D3573C;
                     display: flex;
                     position: relative;
                     margin-bottom:1em;
-                    vertical-align: middle;
                     margin-top:0.5em;
+                    justify-content: space-between;
 
                     h2{
                         margin: 0;
@@ -134,20 +133,13 @@ $secondary-color: #D3573C;
                         color:$primary-color;
                         width: 14em;
                     }
-    
-                    span{
-                        text-align: right;
-                        margin-left:3em;  
-                        color:$primary-color;                   
-                    }
 
-                    #heart{
-                        margin-left:0.3em;
-                        font-size: 1.2em;
-                        vertical-align: middle;
-                        font-family: -apple-system;
-                        line-height: 1em;
+                    #likes-info{
                         color:$primary-color;
+
+                        #heart{
+                            font-family: -apple-system;
+                        }
                     }
                 }
             }
@@ -312,7 +304,6 @@ $secondary-color: #D3573C;
 
         #media-content{
             justify-content: center;
-            align-items: stretch;
             width: 100%;
 
             .media-piece{
@@ -320,16 +311,9 @@ $secondary-color: #D3573C;
                     height:14em;
                     width: 89vw;
                 }
-
-                .info{    
-                    span{
-                        margin-left:8em;                     
-                    }
-                }
             }
         }
     }
-
 
     // FORMULAIRE - VERSION MOBILE
     #form{
@@ -390,7 +374,7 @@ $secondary-color: #D3573C;
 
             h1{
                 font-size: 3em;
-                width: 60vw;
+                width: 50vw;
             }
         }   
 
@@ -406,7 +390,7 @@ $secondary-color: #D3573C;
         }
 
         #media-content{
-            justify-content: space-around;
+            justify-content: space-evenly;
         }
     }
 

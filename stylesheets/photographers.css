@@ -83,12 +83,12 @@ main #contact {
 main #media-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-bottom: 3em;
 }
 main #media-content .media-piece img, main #media-content .media-piece video {
-  height: 20em;
-  width: 20em;
+  height: 19em;
+  width: 19em;
   object-fit: cover;
   overflow: hidden;
   padding: 0;
@@ -99,8 +99,8 @@ main #media-content .media-piece .info {
   display: flex;
   position: relative;
   margin-bottom: 1em;
-  vertical-align: middle;
   margin-top: 0.5em;
+  justify-content: space-between;
 }
 main #media-content .media-piece .info h2 {
   margin: 0;
@@ -110,18 +110,11 @@ main #media-content .media-piece .info h2 {
   color: #901C1C;
   width: 14em;
 }
-main #media-content .media-piece .info span {
-  text-align: right;
-  margin-left: 3em;
+main #media-content .media-piece .info #likes-info {
   color: #901C1C;
 }
-main #media-content .media-piece .info #heart {
-  margin-left: 0.3em;
-  font-size: 1.2em;
-  vertical-align: middle;
+main #media-content .media-piece .info #likes-info #heart {
   font-family: -apple-system;
-  line-height: 1em;
-  color: #901C1C;
 }
 
 #form-bg {
@@ -258,15 +251,11 @@ main #media-content .media-piece .info #heart {
   }
   main #media-content {
     justify-content: center;
-    align-items: stretch;
     width: 100%;
   }
   main #media-content .media-piece img, main #media-content .media-piece video {
     height: 14em;
     width: 89vw;
-  }
-  main #media-content .media-piece .info span {
-    margin-left: 8em;
   }
 
   #form {
@@ -311,7 +300,7 @@ main #media-content .media-piece .info #heart {
   }
   main #photographer-banner h1 {
     font-size: 3em;
-    width: 60vw;
+    width: 50vw;
   }
   main #contact {
     padding: 0.7em 0.5em;
@@ -324,7 +313,7 @@ main #media-content .media-piece .info #heart {
     will-change: transform;
   }
   main #media-content {
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 
   #form {

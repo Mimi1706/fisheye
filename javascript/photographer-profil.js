@@ -44,8 +44,8 @@ const fetchData = async () => {
                      <img src="content/media/${allPhotographers[i].id}/${allMedia[x].image}"></img>
                      <div class="info">
                      <h2>${allMedia[x].title}</h2>
-                     <span>${allMedia[x].likes}</span>
-                     <span id="heart">&#9829</span>
+                     <div id="likes-info" ><span id="nb-likes">${allMedia[x].likes}</span>
+                     <span id="heart">&#9829</span></div>
                      </div>
                      </div>
                   `;
@@ -58,8 +58,8 @@ const fetchData = async () => {
                      <video><source src="content/media/${allPhotographers[i].id}/${allMedia[x].video}"></video>
                      <div class="info">
                      <h2>${allMedia[x].title}</h2>
-                     <span>${allMedia[x].likes}</span>
-                     <span id="heart">&#9829</span>
+                     <div id="likes-info" ><span id="nb-likes">${allMedia[x].likes}</span>
+                     <span id="heart">&#9829</span></div>
                      </div>
                      </div>
                   `;
