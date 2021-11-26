@@ -7,7 +7,14 @@ const formBg = document.getElementById('form-bg');
     function closeForm(displayStyle){
         formWindow.style.display = displayStyle;
         formBg.style.display = 'none';
+        reloadScrollBars()
+        document.getElementById('contact').style.display = 'block';
     }
+
+    function reloadScrollBars() {
+        document.body.style.overflow = 'auto';  // firefox, chrome
+        document.body.scroll = "yes"; // ie 
+      }     
 
     //CHAMPS DU FORMULAIRE
     function firstName() {

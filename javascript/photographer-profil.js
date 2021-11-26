@@ -83,5 +83,12 @@ function openForm(displayStyle){
    formBg.style.display = 'block';
    document.body.scrollTop = 0; // For Safari
    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+   unloadScrollBars();
+   document.getElementById('contact').style.display = 'none';
 }
 
+// Fonction pour cacher la barre de scroll
+function unloadScrollBars() {
+   document.body.style.overflow = 'hidden';  // firefox, chrome
+   document.body.scroll = "no"; // ie 
+ }

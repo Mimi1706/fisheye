@@ -104,13 +104,13 @@ $secondary-color: #D3573C;
         #media-content{
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-between;
             padding-bottom:3em;
 
             .media-piece{
                 img, video{
-                    height:19em;
-                    width: 19em;
+                    height:21em;
+                    width: 21em;
                     object-fit: cover;
                     overflow: hidden;
                     padding: 0;
@@ -298,8 +298,10 @@ $secondary-color: #D3573C;
             position: sticky;
             width: 12em;
             top:93vh;
-            margin-left: 20vw;
             will-change: transform;
+
+            display: table;
+            margin: auto;
         }
 
         #media-content{
@@ -385,17 +387,25 @@ $secondary-color: #D3573C;
             position: sticky;
             width: 12em;
             top:93vh;
-            margin-left: 35vw;
+            display: table;
+            margin: auto;
             will-change: transform;
         }
 
         #media-content{
-            justify-content: space-evenly;
+            justify-content: space-around;
+
+            .media-piece{
+                img, video{
+                    height:20em;
+                    width: 20em;
+                }
+            }
         }
     }
 
     // FORMULAIRE - VERSION MOBILE
     #form{
-        margin-top:3em;
+        margin-top:1em;
     }
 }
