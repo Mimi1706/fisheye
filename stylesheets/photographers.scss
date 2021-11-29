@@ -84,28 +84,11 @@ main{
         }
     }
 
-    #contact{
-
-        background-color: $primary-color;
-        color: white;
-        border: none;
-        border-radius: 0.3em;
-        padding: 1em 0.5em;
-        font-size: 1em;
-        cursor: pointer;
-        position: absolute;
-        width: 10em;
-        height: auto;
-        top:11em;
-        margin-left: 45vw;
-        z-index:1;
-    }
-
     #media-section{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding-bottom:3em;
+        padding-bottom:2em;
 
         .media-piece{
             img, video{
@@ -144,6 +127,42 @@ main{
                 }
             }
         }
+    }
+}
+
+#contact{
+
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    padding: 1em 0.5em;
+    font-size: 1em;
+    cursor: pointer;
+    position: absolute;
+    width: 10em;
+    height: auto;
+    top:11em;
+    margin-left: 45vw;
+    z-index:1;
+}
+
+#sticky-infos{
+    width: 200px;
+    height: 30px;
+    padding: 10px 30px;
+    background-color: $secondary-color;
+    border-radius: 0.2em;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    margin-left:71vw;
+    font-size: 1.1em;
+
+    #all-likes{
+        font-family: -apple-system;
     }
 }
 
@@ -301,7 +320,6 @@ main{
         #photographer-banner{
             background-color: white;
             padding:0;
-            margin-bottom:0em;
 
             img{
                 height:8.5em;
@@ -337,19 +355,6 @@ main{
             }
         }
 
-        #contact{
-            padding: 0.7em 0.5em;
-            font-size: 1em;
-            position: -webkit-sticky;
-            position: sticky;
-            width: 12em;
-            top:93vh;
-            will-change: transform;
-
-            display: table;
-            margin: auto;
-        }
-
         #media-section{
             justify-content: center;
             width: 100%;
@@ -361,6 +366,20 @@ main{
                 }
             }
         }
+    }
+
+    #contact{
+        padding: 0.7em 0.5em;
+        font-size: 1em;
+        position: -webkit-sticky;
+        position: sticky;
+        display: table;
+        margin: auto;
+        bottom: 10px;
+    }
+
+    #sticky-infos{
+        display: none;
     }
 
     // FORMULAIRE - VERSION MOBILE
@@ -414,8 +433,6 @@ main{
 
         #photographer-banner{
 
-            margin-bottom:0em;
-
             img{
                 right:4em;
             }
@@ -425,18 +442,6 @@ main{
                 width: 50vw;
             }
         }   
-
-        #contact{
-            padding: 0.7em 0.5em;
-            font-size: 1em;
-            position: -webkit-sticky;
-            position: sticky;
-            width: 12em;
-            top:93vh;
-            display: table;
-            margin: auto;
-            will-change: transform;
-        }
 
         #media-section{
             justify-content: space-around;
@@ -448,6 +453,20 @@ main{
                 }
             }
         }
+    }
+
+    #contact{
+        padding: 0.7em 0.5em;
+        font-size: 1em;
+        position: -webkit-sticky;
+        position: sticky;
+        display: table;
+        margin: auto;
+        bottom: 10px;
+    }
+
+    #sticky-infos{
+        display: none;
     }
 
     // FORMULAIRE - VERSION MOBILE

@@ -22,11 +22,8 @@
     <main>
 
     <section id="photographer-banner"></section>
-    <button id="contact" onclick="openForm('block')">Contactez-moi</button>
 
     <section id="media-section"></section>
-
-    <div id="sticky-infos"></div>
 
     </main>
 
@@ -53,15 +50,19 @@
         <input type="submit" id="submit-btn" class="submit-btn" value="Envoyer"/>
     </form>
 
+    <button id="contact" onclick="openForm('block')">Contactez-moi</button>
+
     <div class="lightbox">
 
         <div class="lightbox-content">
-            
-
         </div>
 
         <span onclick="closelightbox('none')" class="close-lightbox-btn">&#215;</span>
+    </div>
 
+    <div id="sticky-infos">
+        <span id="all-likes"></span>
+        <span id="day-price"></span>
     </div>
 </body>
 

@@ -65,26 +65,11 @@ main #photographer-banner .filter li {
   font-weight: 500;
   color: #901C1C;
 }
-main #contact {
-  background-color: #901C1C;
-  color: white;
-  border: none;
-  border-radius: 0.3em;
-  padding: 1em 0.5em;
-  font-size: 1em;
-  cursor: pointer;
-  position: absolute;
-  width: 10em;
-  height: auto;
-  top: 11em;
-  margin-left: 45vw;
-  z-index: 1;
-}
 main #media-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-bottom: 3em;
+  padding-bottom: 2em;
 }
 main #media-section .media-piece img, main #media-section .media-piece video {
   height: 21em;
@@ -115,6 +100,40 @@ main #media-section .media-piece .info #likes-info {
   color: #901C1C;
 }
 main #media-section .media-piece .info #likes-info #heart {
+  font-family: -apple-system;
+}
+
+#contact {
+  background-color: #901C1C;
+  color: white;
+  border: none;
+  border-radius: 0.3em;
+  padding: 1em 0.5em;
+  font-size: 1em;
+  cursor: pointer;
+  position: absolute;
+  width: 10em;
+  height: auto;
+  top: 11em;
+  margin-left: 45vw;
+  z-index: 1;
+}
+
+#sticky-infos {
+  width: 200px;
+  height: 30px;
+  padding: 10px 30px;
+  background-color: #D3573C;
+  border-radius: 0.2em;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  position: sticky;
+  bottom: 0;
+  margin-left: 71vw;
+  font-size: 1.1em;
+}
+#sticky-infos #all-likes {
   font-family: -apple-system;
 }
 
@@ -253,7 +272,6 @@ main #media-section .media-piece .info #likes-info #heart {
   main #photographer-banner {
     background-color: white;
     padding: 0;
-    margin-bottom: 0em;
   }
   main #photographer-banner img {
     height: 8.5em;
@@ -282,17 +300,6 @@ main #media-section .media-piece .info #likes-info #heart {
   main #photographer-banner .filter li {
     margin-bottom: 0.5em;
   }
-  main #contact {
-    padding: 0.7em 0.5em;
-    font-size: 1em;
-    position: -webkit-sticky;
-    position: sticky;
-    width: 12em;
-    top: 93vh;
-    will-change: transform;
-    display: table;
-    margin: auto;
-  }
   main #media-section {
     justify-content: center;
     width: 100%;
@@ -300,6 +307,20 @@ main #media-section .media-piece .info #likes-info #heart {
   main #media-section .media-piece img, main #media-section .media-piece video {
     height: 14em;
     width: 89vw;
+  }
+
+  #contact {
+    padding: 0.7em 0.5em;
+    font-size: 1em;
+    position: -webkit-sticky;
+    position: sticky;
+    display: table;
+    margin: auto;
+    bottom: 10px;
+  }
+
+  #sticky-infos {
+    display: none;
   }
 
   #form {
@@ -336,9 +357,6 @@ main #media-section .media-piece .info #likes-info #heart {
   }
 }
 @media (min-width: 701px) and (max-width: 1100px) {
-  main #photographer-banner {
-    margin-bottom: 0em;
-  }
   main #photographer-banner img {
     right: 4em;
   }
@@ -346,23 +364,26 @@ main #media-section .media-piece .info #likes-info #heart {
     font-size: 3em;
     width: 50vw;
   }
-  main #contact {
-    padding: 0.7em 0.5em;
-    font-size: 1em;
-    position: -webkit-sticky;
-    position: sticky;
-    width: 12em;
-    top: 93vh;
-    display: table;
-    margin: auto;
-    will-change: transform;
-  }
   main #media-section {
     justify-content: space-around;
   }
   main #media-section .media-piece img, main #media-section .media-piece video {
     height: 20em;
     width: 20em;
+  }
+
+  #contact {
+    padding: 0.7em 0.5em;
+    font-size: 1em;
+    position: -webkit-sticky;
+    position: sticky;
+    display: table;
+    margin: auto;
+    bottom: 10px;
+  }
+
+  #sticky-infos {
+    display: none;
   }
 
   #form {

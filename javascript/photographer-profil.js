@@ -30,6 +30,10 @@ const fetchData = async () => {
                <p class="tagline">${allPhotographers[i].tagline}</p>
                <ul class="filter">${allPhotographers[i].tags.map(tag => `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul> 
             `;
+
+            // Ajout du prix dans le sticky-infos
+            let stickyDayPrice = document.getElementById('day-price');
+            stickyDayPrice.innerHTML += allPhotographers[i].price + "€ / jour";
          }
 
          // Génère le contenu media du photographe
@@ -95,7 +99,6 @@ function unloadScrollBars() {
  }
 
 // FENETRE MINIATURE D'INFORMATIONS LIKES
-
 // ATTENDS QUE LE CONTENU SE CHARGE
 function sendData() {
    return new Promise(resolve => {
@@ -108,6 +111,23 @@ function sendData() {
 // CHARGE LES INFORMATIONS
 async function asyncCall() {
    await sendData();
+
+   // CALCUL DES LIKES
+   let allLikes = document.querySelectorAll('.nb-likes');
+   let sum = 0;
+
+   for(let x=0; x < allLikes.length; x++){
+
+      sum += parseFloat(allLikes[x].innerHTML)
+   }
+
+   // CRÉATION DE LA FENETRE STICKY
+   let stickyAllLikes = document.getElementById('all-likes');
+
+   stickyAllLikes.innerHTML += sum + "&#x2665;";
+
+   console.log(stickyInfos.innerHTML)
+
 
 }
  
