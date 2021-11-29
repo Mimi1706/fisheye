@@ -34,6 +34,10 @@ const fetchData = async () => {
             // Ajout du prix dans le sticky-infos
             let stickyDayPrice = document.getElementById('day-price');
             stickyDayPrice.innerHTML += allPhotographers[i].price + "€ / jour";
+
+            // Ajout du prénom dans contact
+            let contactMe = document.getElementById('Photographer-Name');
+            contactMe.innerHTML += allPhotographers[i].name;
          }
 
          // Génère le contenu media du photographe
