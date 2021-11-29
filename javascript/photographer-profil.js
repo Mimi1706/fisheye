@@ -12,9 +12,10 @@ const fetchData = async () => {
    .then (function(dataJson){
       let allPhotographers = dataJson.photographers;
       let allMedia = dataJson.media;
-      
+
       let photographerBanner = document.getElementById('photographer-banner');
-      let allMediaContent = document.getElementById('media-content');
+      let allMediaContent = document.getElementById('media-section');
+      let stickyInfos = document.getElementById('sticky-infos');
 
       // Vérifie l'identité du photographe et génère sa bannière
       for(let i in allPhotographers){
@@ -22,7 +23,7 @@ const fetchData = async () => {
          if(`${allPhotographers[i].id}` == photographerIdUrl){
             photographerBanner.innerHTML += 
             `
-               <img src="content/portraits/${allPhotographers[i].portrait}"></img>
+               <img class="media-section" src="content/portraits/${allPhotographers[i].portrait}"></img>
 
                <h1>${allPhotographers[i].name}</h1>
                <p class="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
@@ -36,15 +37,15 @@ const fetchData = async () => {
 
             if(`${allPhotographers[i].id}` == photographerIdUrl && `${allPhotographers[i].id}` == `${allMedia[x].photographerId}`){
 
-               // Vérifie si le media est une image de format jpg
+               // Vérifie si le media est une image de type jpg
                if(/\.jpe?g$/i.test(`${allMedia[x].image}`)){
                   allMediaContent.innerHTML +=
                   `
                      <div class="media-piece">
-                     <img src="content/media/${allPhotographers[i].id}/${allMedia[x].image}"></img>
+                     <img class="media-content" data-name="${allMedia[x].title}" src="content/media/${allPhotographers[i].id}/${allMedia[x].image}"></img>
                      <div class="info">
-                     <h2>${allMedia[x].title}</h2>
-                     <div id="likes-info" ><span id="nb-likes">${allMedia[x].likes}</span>
+                     <h2 id="media-content-title">${allMedia[x].title}</h2>
+                     <div id="likes-info" ><span class="nb-likes">${allMedia[x].likes}</span>
                      <span id="heart">&#9829</span></div>
                      </div>
                      </div>
@@ -55,10 +56,10 @@ const fetchData = async () => {
                   allMediaContent.innerHTML +=
                   `
                      <div class="media-piece">
-                     <video><source src="content/media/${allPhotographers[i].id}/${allMedia[x].video}"></video>
+                     <video class="media-content" data-name="${allMedia[x].title}" src="content/media/${allPhotographers[i].id}/${allMedia[x].video}"></video>
                      <div class="info">
-                     <h2>${allMedia[x].title}</h2>
-                     <div id="likes-info" ><span id="nb-likes">${allMedia[x].likes}</span>
+                     <h2 id="media-content-title">${allMedia[x].title}</h2>
+                     <div id="likes-info" ><span class="nb-likes">${allMedia[x].likes}</span>
                      <span id="heart">&#9829</span></div>
                      </div>
                      </div>
@@ -87,8 +88,27 @@ function openForm(displayStyle){
    document.getElementById('contact').style.display = 'none';
 }
 
-// Fonction pour cacher la barre de scroll
+// FONCTION POUR CACHER LA BARRE DE SCROLL
 function unloadScrollBars() {
    document.body.style.overflow = 'hidden';  // firefox, chrome
    document.body.scroll = "no"; // ie 
  }
+
+// FENETRE MINIATURE D'INFORMATIONS LIKES
+
+// ATTENDS QUE LE CONTENU SE CHARGE
+function sendData() {
+   return new Promise(resolve => {
+   setTimeout(() => {
+      resolve();
+   }, 1000);
+   });
+}
+
+// CHARGE LES INFORMATIONS
+async function asyncCall() {
+   await sendData();
+
+}
+ 
+asyncCall();

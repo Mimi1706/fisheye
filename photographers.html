@@ -24,10 +24,11 @@
     <section id="photographer-banner"></section>
     <button id="contact" onclick="openForm('block')">Contactez-moi</button>
 
-    <section id="media-content"></section>
+    <section id="media-section"></section>
+
+    <div id="sticky-infos"></div>
 
     </main>
-
 
     <!-- FORMULAIRE -->
     <div id="form-bg"></div>
@@ -52,8 +53,20 @@
         <input type="submit" id="submit-btn" class="submit-btn" value="Envoyer"/>
     </form>
 
+    <div class="lightbox">
+
+        <div class="lightbox-content">
+            
+
+        </div>
+
+        <span onclick="closelightbox('none')" class="close-lightbox-btn">&#215;</span>
+
+    </div>
+</body>
+
+    <script src="javascript/lightbox.js"></script>
     <script src="javascript/photographer-profil.js"> </script>
     <script src="javascript/form.js"> </script>
 
-</body>
 </html>

@@ -61,7 +61,7 @@ main #photographer-banner .filter li {
   padding: 0px 7px;
   border: 1px solid lightgrey;
   border-radius: 1em;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 500;
   color: #901C1C;
 }
@@ -80,13 +80,13 @@ main #contact {
   margin-left: 45vw;
   z-index: 1;
 }
-main #media-content {
+main #media-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 3em;
 }
-main #media-content .media-piece img, main #media-content .media-piece video {
+main #media-section .media-piece img, main #media-section .media-piece video {
   height: 21em;
   width: 21em;
   object-fit: cover;
@@ -94,15 +94,16 @@ main #media-content .media-piece img, main #media-content .media-piece video {
   padding: 0;
   margin: 0;
   border-radius: 0.3em;
+  cursor: pointer;
 }
-main #media-content .media-piece .info {
+main #media-section .media-piece .info {
   display: flex;
   position: relative;
   margin-bottom: 1em;
-  margin-top: 0.5em;
+  margin-top: 0;
   justify-content: space-between;
 }
-main #media-content .media-piece .info h2 {
+main #media-section .media-piece .info h2 {
   margin: 0;
   padding: 0;
   font-weight: 100;
@@ -110,11 +111,53 @@ main #media-content .media-piece .info h2 {
   color: #901C1C;
   width: 14em;
 }
-main #media-content .media-piece .info #likes-info {
+main #media-section .media-piece .info #likes-info {
   color: #901C1C;
 }
-main #media-content .media-piece .info #likes-info #heart {
+main #media-section .media-piece .info #likes-info #heart {
   font-family: -apple-system;
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: none;
+}
+.lightbox span {
+  position: absolute;
+  z-index: 1000;
+  color: #D3573C;
+  font-size: 5em;
+  top: -20px;
+  right: 20px;
+  cursor: pointer;
+}
+.lightbox .lightbox-content {
+  display: flex;
+  padding-top: 0.2em;
+  font-weight: 300;
+  font-size: 1.3em;
+  flex-direction: column-reverse;
+  color: #D3573C;
+}
+.lightbox .lightbox-content img, .lightbox .lightbox-content video {
+  max-width: 80vw;
+  max-height: 85vh;
+  object-fit: scale-down;
+  border-right: 4px solid lightgrey;
+  border-radius: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #form-bg {
@@ -250,11 +293,11 @@ main #media-content .media-piece .info #likes-info #heart {
     display: table;
     margin: auto;
   }
-  main #media-content {
+  main #media-section {
     justify-content: center;
     width: 100%;
   }
-  main #media-content .media-piece img, main #media-content .media-piece video {
+  main #media-section .media-piece img, main #media-section .media-piece video {
     height: 14em;
     width: 89vw;
   }
@@ -314,10 +357,10 @@ main #media-content .media-piece .info #likes-info #heart {
     margin: auto;
     will-change: transform;
   }
-  main #media-content {
+  main #media-section {
     justify-content: space-around;
   }
-  main #media-content .media-piece img, main #media-content .media-piece video {
+  main #media-section .media-piece img, main #media-section .media-piece video {
     height: 20em;
     width: 20em;
   }
