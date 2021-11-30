@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
 .flex {
   display: flex;
@@ -101,6 +102,11 @@ main #media-section .media-piece .info #likes-info {
 }
 main #media-section .media-piece .info #likes-info #heart {
   font-family: -apple-system;
+  cursor: pointer;
+}
+main #media-section .media-piece .info #likes-info #heart:before {
+  content: attr(data-before);
+  position: absolute;
 }
 
 #contact {
@@ -124,7 +130,7 @@ main #media-section .media-piece .info #likes-info #heart {
   background-color: #D3573C;
 }
 
-#sticky-infos {
+#sticky-window-infos {
   width: 200px;
   height: 30px;
   padding: 10px 30px;
@@ -138,8 +144,11 @@ main #media-section .media-piece .info #likes-info #heart {
   margin-left: 71vw;
   font-size: 1.1em;
 }
-#sticky-infos #all-likes {
+#sticky-window-infos #all-likes {
   font-family: -apple-system;
+}
+#sticky-window-infos #all-likes:after {
+  content: "♥";
 }
 
 .lightbox {
@@ -207,7 +216,7 @@ main #media-section .media-piece .info #likes-info #heart {
   position: absolute;
   left: 0;
   right: 0;
-  top: 2em;
+  top: 1em;
   box-shadow: -3px 3px 15px grey;
   display: none;
 }
@@ -324,7 +333,7 @@ main #media-section .media-piece .info #likes-info #heart {
     bottom: 10px;
   }
 
-  #sticky-infos {
+  #sticky-window-infos {
     display: none;
   }
 
@@ -387,7 +396,7 @@ main #media-section .media-piece .info #likes-info #heart {
     bottom: 10px;
   }
 
-  #sticky-infos {
+  #sticky-window-infos {
     display: none;
   }
 

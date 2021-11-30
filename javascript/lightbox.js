@@ -19,6 +19,7 @@ async function asyncCall() {
         media.addEventListener('click', e => {
 
             lightbox.classList.add('active');
+            unloadScrollBars()
 
             // Ajout le titre sous l'image/la vidéo
             let medialAlt = media.dataset.name;
@@ -29,6 +30,7 @@ async function asyncCall() {
                 var lightboxMedia = document.createElement('img')
             } else {
                 var lightboxMedia = document.createElement('video')
+                lightboxMedia.controls = true;
             }
 
             lightboxMedia.src = media.src
@@ -46,7 +48,20 @@ const lightboxContent = document.querySelector('.lightbox-content')
 
 function closelightbox(){
     document.querySelector('.lightbox').classList.remove('active');
+    reloadScrollBars()
     while (lightboxContent.firstChild) {
         lightboxContent.removeChild(lightboxContent.firstChild);
     }
 }
+
+// FONCTION POUR CACHER LA BARRE DE SCROLL
+function unloadScrollBars() {
+    document.body.style.overflow = 'hidden';  // firefox, chrome
+    document.body.scroll = "no"; // ie 
+  }
+
+//FONCTION POUR RECHARGER LA BARRE DE SCROLL
+function reloadScrollBars() {
+    document.body.style.overflow = 'auto';  // firefox, chrome
+    document.body.scroll = "yes"; // ie 
+  }     

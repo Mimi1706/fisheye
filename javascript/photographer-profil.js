@@ -15,7 +15,6 @@ const fetchData = async () => {
 
       let photographerBanner = document.getElementById('photographer-banner');
       let allMediaContent = document.getElementById('media-section');
-      let stickyInfos = document.getElementById('sticky-infos');
 
       // Vérifie l'identité du photographe et génère sa bannière
       for(let i in allPhotographers){
@@ -31,7 +30,7 @@ const fetchData = async () => {
                <ul class="filter">${allPhotographers[i].tags.map(tag => `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul> 
             `;
 
-            // Ajout du prix dans le sticky-infos
+            // Ajout du prix dans le sticky-window-infos
             let stickyDayPrice = document.getElementById('day-price');
             stickyDayPrice.innerHTML += allPhotographers[i].price + "€ / jour";
 
@@ -54,7 +53,7 @@ const fetchData = async () => {
                      <div class="info">
                      <h2 id="media-content-title">${allMedia[x].title}</h2>
                      <div id="likes-info" ><span class="nb-likes">${allMedia[x].likes}</span>
-                     <span id="heart">&#9829</span></div>
+                     <span id="heart">&#9825;</span></div>
                      </div>
                      </div>
                   `;
@@ -68,7 +67,7 @@ const fetchData = async () => {
                      <div class="info">
                      <h2 id="media-content-title">${allMedia[x].title}</h2>
                      <div id="likes-info" ><span class="nb-likes">${allMedia[x].likes}</span>
-                     <span id="heart">&#9829</span></div>
+                     <span id="heart">&#9825;</span></div>
                      </div>
                      </div>
                   `;
@@ -102,7 +101,7 @@ function unloadScrollBars() {
    document.body.scroll = "no"; // ie 
  }
 
-// FENETRE MINIATURE D'INFORMATIONS LIKES
+// LIKES
 // ATTENDS QUE LE CONTENU SE CHARGE
 function sendData() {
    return new Promise(resolve => {
@@ -125,14 +124,33 @@ async function asyncCall() {
       sum += parseFloat(allLikes[x].innerHTML)
    }
 
-   // CRÉATION DE LA FENETRE STICKY
+   // CRÉATION DE LA FENETRE STICKY (TOTAL LIKES + PRIX/JOUR)
    let stickyAllLikes = document.getElementById('all-likes');
+   stickyAllLikes.innerHTML += sum;
 
-   stickyAllLikes.innerHTML += sum + "&#x2665;";
+   // ANIMATION COEUR LIKE DE CHAQUE MEDIA + MISE À JOUR DU TOTAL DES LIKES
+   let mediaInfos = document.querySelectorAll('#likes-info');
 
-   console.log(stickyInfos.innerHTML)
+   for (let m in mediaInfos){
 
+      let emptyHeart = mediaInfos[m].childNodes[2];
+      emptyHeart.addEventListener('click', e => {
+   
+         if(emptyHeart.className == 'change'){
+            emptyHeart.setAttribute('data-before', '');
+            emptyHeart.classList.remove('change');
+            mediaInfos[m].childNodes[0].innerText--;
+            stickyAllLikes.innerText--;
 
+         } else{
+            emptyHeart.setAttribute('data-before', '\u2665');
+            emptyHeart.classList.add('change');
+            mediaInfos[m].childNodes[0].innerText++;
+            stickyAllLikes.innerText++;
+         }
+     })
+   }
 }
  
 asyncCall();
+
