@@ -1,4 +1,4 @@
-// ATTENDS QUE LE CONTENU SE CHARGE
+// Attends que le contenu se charge
 function sendData() {
     return new Promise(resolve => {
       setTimeout(() => {
@@ -7,7 +7,7 @@ function sendData() {
     });
 }
 
-// DÉCLENCHE LA LIGHTBOX UNE FOIS QUE LE CONTENU EST CHARGÉ
+// La lightbox est fonctionnelle une fois que le contenu de la page est chargé
 async function asyncCall() {
     await sendData();
 
@@ -21,11 +21,11 @@ async function asyncCall() {
             lightbox.classList.add('active');
             unloadScrollBars()
 
-            // Ajout le titre sous l'image/la vidéo
+            // Ajoute le titre sous l'image ou la vidéo
             let medialAlt = media.dataset.name;
             lightboxContent.innerHTML += medialAlt;
 
-            // Ajout de l'image ou de la vidéo
+            // Ajoute l'image ou la vidéo dans la lightbox
             if(/\.jpe?g$/i.test(media.src)){
                 var lightboxMedia = document.createElement('img')
             } else {
@@ -42,7 +42,7 @@ async function asyncCall() {
   
 asyncCall();
 
-// BOUTON DE FERMETURE DE LA LIGHTBOX
+// Bouton de la fermeture de la lightbox
 const lightbox = document.querySelector('.lightbox');
 const lightboxContent = document.querySelector('.lightbox-content')
 
@@ -54,13 +54,13 @@ function closelightbox(){
     }
 }
 
-// FONCTION POUR CACHER LA BARRE DE SCROLL
+// Fonction pour cacher la barre de scroll (utilisée lors du clic sur un média)
 function unloadScrollBars() {
     document.body.style.overflow = 'hidden';  // firefox, chrome
     document.body.scroll = "no"; // ie 
   }
 
-//FONCTION POUR RECHARGER LA BARRE DE SCROLL
+// Fonction pour afficher la barre de scroll (utilisée lors de la fermeture de la lightbox)
 function reloadScrollBars() {
     document.body.style.overflow = 'auto';  // firefox, chrome
     document.body.scroll = "yes"; // ie 

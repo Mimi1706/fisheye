@@ -85,7 +85,7 @@ const fetchData = async () => {
 
 fetchData();
 
-//BOUTON D'OUVERTURE DU FORMULAIRE 
+// Bouton d'ouverture du formulaire
 function openForm(displayStyle){
    formWindow.style.display = displayStyle;
    formBg.style.display = 'block';
@@ -95,14 +95,15 @@ function openForm(displayStyle){
    document.getElementById('contact').style.display = 'none';
 }
 
-// FONCTION POUR CACHER LA BARRE DE SCROLL
+// Fonction pour cacher la barre de scroll (utilisée lors de l'ouverture du formulaire)
 function unloadScrollBars() {
    document.body.style.overflow = 'hidden';  // firefox, chrome
    document.body.scroll = "no"; // ie 
  }
 
-// LIKES
-// ATTENDS QUE LE CONTENU SE CHARGE
+
+// TOUT CE QUI CONCERNE LES LIKES
+// Attends que le contenu se charge
 function sendData() {
    return new Promise(resolve => {
    setTimeout(() => {
@@ -111,11 +112,11 @@ function sendData() {
    });
 }
 
-// CHARGE LES INFORMATIONS
+// Charge les informations
 async function asyncCall() {
    await sendData();
 
-   // CALCUL DES LIKES
+   // Calcul des likes
    let allLikes = document.querySelectorAll('.nb-likes');
    let sum = 0;
 
@@ -124,11 +125,11 @@ async function asyncCall() {
       sum += parseFloat(allLikes[x].innerHTML)
    }
 
-   // CRÉATION DE LA FENETRE STICKY (TOTAL LIKES + PRIX/JOUR)
+   // Création de la fenêtre sticky (total likes + prix/jour)
    let stickyAllLikes = document.getElementById('all-likes');
    stickyAllLikes.innerHTML += sum;
 
-   // ANIMATION COEUR LIKE DE CHAQUE MEDIA + MISE À JOUR DU TOTAL DES LIKES
+   // Animation du coeur de chaque média + mise à jour du total des likes à chaque clic
    let mediaInfos = document.querySelectorAll('#likes-info');
 
    for (let m in mediaInfos){

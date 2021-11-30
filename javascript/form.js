@@ -3,7 +3,7 @@ const closeBtn = document.getElementsByClassName('close-btn');
 const formWindow = document.getElementById('form');
 const formBg = document.getElementById('form-bg');
 
-    //BOUTON DE FERMETURE 
+    // Bouton de fermeture
     function closeForm(displayStyle){
         formWindow.style.display = displayStyle;
         formBg.style.display = 'none';
@@ -16,7 +16,7 @@ const formBg = document.getElementById('form-bg');
         document.body.scroll = "yes"; // ie 
       }     
 
-    //CHAMPS DU FORMULAIRE
+    // Champs du formulaire
     function firstName() {
         const firstName = document.getElementById('firstName-field');
         const isValueValid = firstName.value.trim().length >= 2 && firstName.value.match(/^[A-Za-z]+$/);
@@ -77,7 +77,7 @@ const formBg = document.getElementById('form-bg');
         }
     }
 
-    // BOUTON D'ENVOI DES CHAMPS
+    // Bouton d'envoi des champs
     const form = document.querySelector('#form');
 
     form.addEventListener('submit', function(event) {
@@ -90,6 +90,7 @@ const formBg = document.getElementById('form-bg');
 
         const isFormValid = () => firstName() && lastName() && email() && message();
 
+        // Envoi des informations dans la console
         if (isFormValid()) {
             console.log('Prénom:',document.getElementById('firstName-field').value);
             console.log('Nom:',document.getElementById('lastName-field').value);
