@@ -100,9 +100,9 @@ function unloadScrollBars() {
    document.body.style.overflow = 'hidden';  // firefox, chrome
    document.body.scroll = "no"; // ie 
  }
+ 
 
-
-// TOUT CE QUI CONCERNE LES LIKES
+// TOUT CE QUI CONCERNE LES LIKES 
 // Attends que le contenu se charge
 function sendData() {
    return new Promise(resolve => {

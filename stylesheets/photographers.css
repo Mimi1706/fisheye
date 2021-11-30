@@ -15,11 +15,10 @@ main #photographer-banner {
   padding: 3.5em 3em;
   height: auto;
   margin-top: 2em;
-  margin-bottom: 3em;
 }
 main #photographer-banner img {
-  height: 11.5em;
-  width: 11.5em;
+  height: 12em;
+  width: 12em;
   object-fit: cover;
   overflow: hidden;
   border-radius: 10em;
@@ -66,15 +65,74 @@ main #photographer-banner .filter li {
   font-weight: 500;
   color: #901C1C;
 }
+main .media-filters {
+  padding: 0;
+  margin: 0;
+}
+main .media-filters p {
+  font-weight: bold;
+}
+main .media-filters ul {
+  background: #901C1C;
+  border-radius: 0.2em;
+  margin-left: 1em;
+  padding: 0.5em;
+  box-shadow: 0px 4px 2px lightgrey;
+  width: 9em;
+}
+main .media-filters ul li {
+  list-style-type: none;
+  border-bottom: 1px solid white;
+}
+main .media-filters ul li button {
+  padding: 0.8em;
+  padding-right: 3em;
+  width: 100%;
+  text-align: left;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+main .media-filters ul li:nth-child(5) {
+  border-bottom: none;
+}
+main .media-filters ul label {
+  display: block;
+  padding: 0.3em 0.8em;
+  color: white;
+  cursor: pointer;
+}
+main .media-filters ul label:before {
+  content: "v";
+  margin-left: 7em;
+  font-weight: bold;
+}
+main .media-filters ul label:after {
+  content: "^";
+  margin-left: 7em;
+  font-weight: bold;
+}
+main .media-filters ul input[type=checkbox] {
+  display: none;
+}
+main .media-filters ul #collapse:checked ~ li {
+  display: none;
+}
 main #media-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 1em;
+  width: 100%;
+}
+main #media-section .media-piece {
+  width: 31%;
 }
 main #media-section .media-piece img, main #media-section .media-piece video {
   height: 21em;
-  width: 21em;
+  width: 100%;
   object-fit: cover;
   overflow: hidden;
   padding: 0;
@@ -246,8 +304,8 @@ main #media-section .media-piece .info #likes-info #heart:before {
   margin: 0em;
 }
 #form div label {
-  margin-top: 10em;
   font-size: 1.3em;
+  color: #0c0c0c;
 }
 #form div input {
   width: 100%;
@@ -286,6 +344,7 @@ main #media-section .media-piece .info #likes-info #heart:before {
   main #photographer-banner {
     background-color: white;
     padding: 0;
+    margin-bottom: 2em;
   }
   main #photographer-banner img {
     height: 8.5em;
@@ -314,13 +373,18 @@ main #media-section .media-piece .info #likes-info #heart:before {
   main #photographer-banner .filter li {
     margin-bottom: 0.5em;
   }
+  main .media-filters {
+    display: none;
+  }
   main #media-section {
     justify-content: center;
     width: 100%;
   }
+  main #media-section .media-piece {
+    width: 100%;
+  }
   main #media-section .media-piece img, main #media-section .media-piece video {
     height: 14em;
-    width: 89vw;
   }
 
   #contact {
@@ -379,11 +443,13 @@ main #media-section .media-piece .info #likes-info #heart:before {
     width: 50vw;
   }
   main #media-section {
-    justify-content: space-around;
+    width: 100%;
+  }
+  main #media-section .media-piece {
+    width: 48%;
   }
   main #media-section .media-piece img, main #media-section .media-piece video {
-    height: 20em;
-    width: 20em;
+    height: 30vw;
   }
 
   #contact {

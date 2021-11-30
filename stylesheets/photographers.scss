@@ -13,7 +13,6 @@
 $primary-color: #901C1C;
 $secondary-color: #D3573C;
 
-
 // VERSION DESKTOP
 // MAIN
 main{
@@ -25,12 +24,11 @@ main{
         padding:3.5em 3em;
         height: auto;
         margin-top:2em;
-        margin-bottom:3em;
         
 
         img{
-            height:11.5em;
-            width: 11.5em;
+            height:12em;
+            width: 12em;
             object-fit: cover;
             overflow: hidden;
             border-radius: 10em;
@@ -84,16 +82,86 @@ main{
         }
     }
 
+    .media-filters{
+        padding: 0;
+        margin: 0;
+
+        p{
+            font-weight: bold;
+        }
+
+        ul{
+            background: $primary-color;
+            border-radius: 0.2em;
+            margin-left: 1em;
+            padding:0.5em;
+            box-shadow: 0px 4px 2px lightgrey;
+            width: 9em;
+
+            li{
+                list-style-type: none;
+                border-bottom: 1px solid white;
+
+                button{
+                    padding:0.8em;
+                    padding-right: 3em;
+                    width: 100%;
+                    text-align: left;
+                    color: white;
+                    background-color: transparent;
+                    border:none;
+                    font-size: 1em;
+                    cursor: pointer;
+                }
+            }
+
+            li:nth-child(5){
+                border-bottom: none;
+            }
+              
+            label{
+                display:block;
+                padding:0.3em 0.8em;
+                color:white;  
+                cursor: pointer; 
+            }
+
+            label:before{
+                content: "v";
+                margin-left:7em;
+                font-weight: bold;
+                
+            }
+
+            label:after{
+                content: "^";
+                margin-left:7em;
+                font-weight: bold;
+            }
+
+            input[type="checkbox"]{
+                display:none;
+            }
+
+            #collapse:checked ~ li{
+                display:none;
+            }
+        }
+    }
+
     #media-section{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         padding-bottom:1em;
+        width: 100%;
 
         .media-piece{
+            width: 31%;
+
             img, video{
                 height:21em;
-                width: 21em;
+                width: 100%;
                 object-fit: cover;
                 overflow: hidden;
                 padding: 0;
@@ -283,8 +351,8 @@ main{
         margin: 0em;
 
         label{
-            margin-top:10em;
             font-size: 1.3em;
+            color:rgb(12, 12, 12);
         }
 
         input{
@@ -335,6 +403,7 @@ main{
         #photographer-banner{
             background-color: white;
             padding:0;
+            margin-bottom:2em;
 
             img{
                 height:8.5em;
@@ -370,14 +439,19 @@ main{
             }
         }
 
+        .media-filters{
+            display: none;
+        }
+
         #media-section{
             justify-content: center;
             width: 100%;
 
             .media-piece{
+                width: 100%;
+
                 img, video{
                     height:14em;
-                    width: 89vw;
                 }
             }
         }
@@ -459,12 +533,13 @@ main{
         }   
 
         #media-section{
-            justify-content: space-around;
+            width: 100%;
 
             .media-piece{
+                width: 48%;
+
                 img, video{
-                    height:20em;
-                    width: 20em;
+                    height:30vw;
                 }
             }
         }
