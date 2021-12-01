@@ -25,6 +25,26 @@ main{
         height: auto;
         margin-top:2em;
         
+        #contact{
+            background-color: $primary-color;
+            color: white;
+            border: none;
+            border-radius: 0.3em;
+            padding: 1em 0.5em;
+            font-size: 1em;
+            cursor: pointer;
+            position: absolute;
+            width: 10em;
+            height: auto;
+            top:11em;
+            margin-left: 45vw;
+            z-index:1;
+        }
+
+        #contact:hover{
+            color: black;
+            background-color: $secondary-color;
+        }
 
         img{
             height:12em;
@@ -79,6 +99,30 @@ main{
                 font-weight: 500;
                 color:$primary-color;
             }
+        }
+    }
+
+    #infos-window{
+        width: 200px;
+        height: 30px;
+        padding: 10px 30px;
+        background-color: $secondary-color;
+        border-radius: 0.2em;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        right:10px;
+        font-size: 1.1em;
+        z-index:1;
+    
+        #all-likes{
+            font-family: -apple-system;
+        }
+    
+        #all-likes:after{
+            content: "\2665"
         }
     }
 
@@ -204,51 +248,6 @@ main{
     }
 }
 
-#contact{
-
-    background-color: $primary-color;
-    color: white;
-    border: none;
-    border-radius: 0.3em;
-    padding: 1em 0.5em;
-    font-size: 1em;
-    cursor: pointer;
-    position: absolute;
-    width: 10em;
-    height: auto;
-    top:11em;
-    margin-left: 45vw;
-    z-index:1;
-}
-
-#contact:hover{
-    color: black;
-    background-color: $secondary-color;
-}
-
-#sticky-window-infos{
-    width: 200px;
-    height: 30px;
-    padding: 10px 30px;
-    background-color: $secondary-color;
-    border-radius: 0.2em;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    position: sticky;
-    bottom: 0;
-    margin-left:71vw;
-    font-size: 1.1em;
-
-    #all-likes{
-        font-family: -apple-system;
-    }
-
-    #all-likes:after{
-        content: "\2665"
-    }
-}
-
 .lightbox{
     position:fixed;
     z-index: 1000;
@@ -262,7 +261,7 @@ main{
     span{
         position: absolute;
         z-index: 1000;
-        color: $secondary-color;
+        color: $primary-color;
         font-size: 5em;
         top:-20px;
         right:20px;
@@ -275,7 +274,7 @@ main{
         font-weight: 300;
         font-size: 1.3em;
         flex-direction: column-reverse;
-        color: $secondary-color;
+        color: $primary-color;
 
         img,video{
             max-width: 80vw;
@@ -307,6 +306,7 @@ main{
     position: absolute;
     opacity: 0.4;
     display: none;
+    z-index:2;
 }
 
 #form{
@@ -321,13 +321,15 @@ main{
     top:1em;
     box-shadow: -3px 3px 15px grey; 
     display: none;
+    z-index:3;
 
-    div:nth-child(1){
+    div:last-child{
         height: 30px;
         width: 30px;
         position: absolute;
         overflow: hidden;
         right:20px;
+        top:20px;
 
         .close-btn{
             font-size: 4em;
@@ -367,7 +369,7 @@ main{
         }
     }
 
-    div:nth-child(6){
+    div:nth-child(5){
         textarea{
             resize: none;
             width: 100%;
@@ -404,6 +406,19 @@ main{
             background-color: white;
             padding:0;
             margin-bottom:2em;
+            height: 9em;
+
+            #contact{
+                padding: 0.7em 0.5em;
+                font-size: 1em;
+                position: fixed;
+                height: 2.5em;
+                left:0;
+                right:0;
+                margin: auto;
+                bottom: 15px;
+                top:auto;
+            }
 
             img{
                 height:8.5em;
@@ -439,6 +454,10 @@ main{
             }
         }
 
+        #infos-window{
+            display: none;
+        }
+
         .media-filters{
             display: none;
         }
@@ -446,6 +465,7 @@ main{
         #media-section{
             justify-content: center;
             width: 100%;
+            margin-bottom:2em;
 
             .media-piece{
                 width: 100%;
@@ -455,20 +475,6 @@ main{
                 }
             }
         }
-    }
-
-    #contact{
-        padding: 0.7em 0.5em;
-        font-size: 1em;
-        position: -webkit-sticky;
-        position: sticky;
-        display: table;
-        margin: auto;
-        bottom: 10px;
-    }
-
-    #sticky-window-infos{
-        display: none;
     }
 
     // FORMULAIRE - VERSION MOBILE
@@ -495,7 +501,7 @@ main{
             }
         }
     
-        div:nth-child(6){
+        div:nth-child(5){
             textarea{
                 margin-top:0.4em;
                 height: 9em;
@@ -522,6 +528,19 @@ main{
 
         #photographer-banner{
 
+            #contact{
+                padding: 0.7em 0.5em;
+                font-size: 1em;
+                position: fixed;
+                margin: auto;
+                bottom: 10px;
+                height: 2.5em;
+                left:0;
+                right:0;
+                bottom: 15px;
+                top:auto;
+            }
+
             img{
                 right:4em;
             }
@@ -532,8 +551,13 @@ main{
             }
         }   
 
+        #infos-window{
+            display: none;
+        }
+
         #media-section{
             width: 100%;
+            margin-bottom:3em;
 
             .media-piece{
                 width: 48%;
@@ -543,20 +567,6 @@ main{
                 }
             }
         }
-    }
-
-    #contact{
-        padding: 0.7em 0.5em;
-        font-size: 1em;
-        position: -webkit-sticky;
-        position: sticky;
-        display: table;
-        margin: auto;
-        bottom: 10px;
-    }
-
-    #sticky-window-infos{
-        display: none;
     }
 
     // FORMULAIRE - VERSION MOBILE

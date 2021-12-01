@@ -59,7 +59,7 @@ header h1 {
   text-align: right;
 }
 
-main #main-photographers-button {
+#main-photographers-button {
   position: fixed;
   text-align: center;
   width: 140px;
@@ -76,6 +76,7 @@ main #main-photographers-button {
   font-weight: 500;
   font-size: 0.9em;
 }
+
 main #photographers {
   margin-top: 4em;
   display: flex;

@@ -22,17 +22,19 @@ const fetchData = async () => {
          if(`${allPhotographers[i].id}` == photographerIdUrl){
             photographerBanner.innerHTML += 
             `
-               <img class="media-section" src="content/portraits/${allPhotographers[i].portrait}"></img>
+               <h1 aria-label="photographer name ${allPhotographers[i].name}">${allPhotographers[i].name}</h1>
+               <p class="location" arial-label="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
+               <p class="tagline" arial-label="tagline">${allPhotographers[i].tagline}</p>
+               <ul class="filter" arial-label="tags">${allPhotographers[i].tags.map(tag => `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul> 
 
-               <h1>${allPhotographers[i].name}</h1>
-               <p class="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
-               <p class="tagline">${allPhotographers[i].tagline}</p>
-               <ul class="filter">${allPhotographers[i].tags.map(tag => `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul> 
+               <button id="contact" onclick="openForm('block')">Contactez-moi</button>
+
+               <img src="content/portraits/${allPhotographers[i].portrait}" aria-label="portrait of ${allPhotographers[i].name}"></img>
             `;
 
-            // Ajout du prix dans le sticky-window-infos
-            let stickyDayPrice = document.getElementById('day-price');
-            stickyDayPrice.innerHTML += allPhotographers[i].price + "€ / jour";
+            // Ajout du prix dans le infos-window
+            let fixedDayPrice = document.getElementById('day-price');
+            fixedDayPrice.innerHTML += allPhotographers[i].price + "€ / jour";
 
             // Ajout du prénom dans contact
             let contactMe = document.getElementById('Photographer-Name');
@@ -48,12 +50,12 @@ const fetchData = async () => {
                if(/\.jpe?g$/i.test(`${allMedia[x].image}`)){
                   allMediaContent.innerHTML +=
                   `
-                     <div class="media-piece">
-                     <img class="media-content" data-name="${allMedia[x].title}" src="content/media/${allPhotographers[i].id}/${allMedia[x].image}"></img>
+                     <div class="media-piece" aria-label="picture ${allMedia[x].title}">
+                     <img class="media-content" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}" src="content/media/${allPhotographers[i].id}/${allMedia[x].image}"></img>
                      <div class="info">
-                     <h2 id="media-content-title">${allMedia[x].title}</h2>
-                     <div id="likes-info" ><span class="nb-likes">${allMedia[x].likes}</span>
-                     <span id="heart">&#9825;</span></div>
+                     <h2 id="media-content-title" aria-labelledby="title ${allMedia[x].title}">${allMedia[x].title}</h2>
+                     <div id="likes-info" aria-label="number of likes"><span class="nb-likes" aria-labelledby="number of likes">${allMedia[x].likes}</span>
+                     <span id="heart" aria-labelledby="click to like">&#9825;</span></div>
                      </div>
                      </div>
                   `;
@@ -62,12 +64,12 @@ const fetchData = async () => {
                } else {
                   allMediaContent.innerHTML +=
                   `
-                     <div class="media-piece">
-                     <video class="media-content" data-name="${allMedia[x].title}" src="content/media/${allPhotographers[i].id}/${allMedia[x].video}"></video>
+                     <div class="media-piece" aria-label="video ${allMedia[x].title}">
+                     <video class="media-content" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}" src="content/media/${allPhotographers[i].id}/${allMedia[x].video}"></video>
                      <div class="info">
-                     <h2 id="media-content-title">${allMedia[x].title}</h2>
-                     <div id="likes-info" ><span class="nb-likes">${allMedia[x].likes}</span>
-                     <span id="heart">&#9825;</span></div>
+                     <h2 id="media-content-title" aria-labelledby="title ${allMedia[x].title}">${allMedia[x].title}</h2>
+                     <div id="likes-info" aria-label="number of likes"><span class="nb-likes" aria-labelledby="number of likes">${allMedia[x].likes}</span>
+                     <span id="heart" aria-labelledby="click to like">&#9825;</span></div>
                      </div>
                      </div>
                   `;
@@ -84,23 +86,6 @@ const fetchData = async () => {
 } 
 
 fetchData();
-
-// Bouton d'ouverture du formulaire
-function openForm(displayStyle){
-   formWindow.style.display = displayStyle;
-   formBg.style.display = 'block';
-   document.body.scrollTop = 0; // For Safari
-   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-   unloadScrollBars();
-   document.getElementById('contact').style.display = 'none';
-}
-
-// Fonction pour cacher la barre de scroll (utilisée lors de l'ouverture du formulaire)
-function unloadScrollBars() {
-   document.body.style.overflow = 'hidden';  // firefox, chrome
-   document.body.scroll = "no"; // ie 
- }
- 
 
 // TOUT CE QUI CONCERNE LES LIKES 
 // Attends que le contenu se charge
@@ -125,13 +110,12 @@ async function asyncCall() {
       sum += parseFloat(allLikes[x].innerHTML)
    }
 
-   // Création de la fenêtre sticky (total likes + prix/jour)
-   let stickyAllLikes = document.getElementById('all-likes');
-   stickyAllLikes.innerHTML += sum;
+   // Création de la fenêtre fixed (total likes + prix/jour)
+   let fixedAllLikes = document.getElementById('all-likes');
+   fixedAllLikes.innerHTML += sum;
 
    // Animation du coeur de chaque média + mise à jour du total des likes à chaque clic
    let mediaInfos = document.querySelectorAll('#likes-info');
-
    for (let m in mediaInfos){
 
       let emptyHeart = mediaInfos[m].childNodes[2];
@@ -141,13 +125,13 @@ async function asyncCall() {
             emptyHeart.setAttribute('data-before', '');
             emptyHeart.classList.remove('change');
             mediaInfos[m].childNodes[0].innerText--;
-            stickyAllLikes.innerText--;
+            fixedAllLikes.innerText--;
 
          } else{
             emptyHeart.setAttribute('data-before', '\u2665');
             emptyHeart.classList.add('change');
             mediaInfos[m].childNodes[0].innerText++;
-            stickyAllLikes.innerText++;
+            fixedAllLikes.innerText++;
          }
      })
    }

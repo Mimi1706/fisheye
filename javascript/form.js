@@ -3,14 +3,41 @@ const closeBtn = document.getElementsByClassName('close-btn');
 const formWindow = document.getElementById('form');
 const formBg = document.getElementById('form-bg');
 
+// Bouton d'ouverture du formulaire
+function openForm(displayStyle){
+    formWindow.style.display = displayStyle;
+    formBg.style.display = 'block';
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    unloadScrollBars();
+    document.getElementById('contact').style.display = 'none';
+
+    // Aria-labels
+    document.getElementById('main-content').setAttribute('aria-hidden', 'true');
+    document.getElementById('header').setAttribute('aria-hidden', 'true');
+    document.getElementById('infos-window').setAttribute('aria-hidden', 'true');
+ }
+ 
+// Fonction pour cacher la barre de scroll (utilisée lors de l'ouverture du formulaire)
+ function unloadScrollBars() {
+    document.body.style.overflow = 'hidden';  // firefox, chrome
+    document.body.scroll = "no"; // ie 
+}
+
 // Bouton de fermeture
 function closeForm(displayStyle){
     formWindow.style.display = displayStyle;
     formBg.style.display = 'none';
     reloadScrollBars()
     document.getElementById('contact').style.display = 'block';
+
+    // Aria-labels
+    document.getElementById('main-content').setAttribute('aria-hidden', 'false');
+    document.getElementById('header').setAttribute('aria-hidden', 'false');
+    document.getElementById('infos-window').setAttribute('aria-hidden', 'false');
 }
 
+// Fonction pour afficher la barre de scroll (utilisée lors de la fermeture du formulaire)
 function reloadScrollBars() {
     document.body.style.overflow = 'auto';  // firefox, chrome
     document.body.scroll = "yes"; // ie 
