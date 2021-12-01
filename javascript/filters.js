@@ -12,36 +12,67 @@ async function asyncCall() {
 await sendData();
 
     let allMediaPieces = document.querySelectorAll('.media-piece');
-    let dateFilter = document.getElementById("filter-date");
-    let popularityFilter = document.getElementById("filter-popularity");
-    let titleFilter = document.getElementById("filter-title");
+    let allMediaSection = document.querySelector('#media-section')
+
+    let selectFilters = document.getElementById("select-filters");
+    selectFilters.addEventListener('change', checkSelection);
 
 
-    for(let mediaPiece of allMediaPieces){
+    function checkSelection() {
 
-        // Filtre de date
-        dateFilter.addEventListener('click', e => {
-            
-            let allDates = mediaPiece.childNodes[1].dataset.date;
-            console.log(allDates)
+        // Réorganise par ordre de popularité
+        if(selectFilters.options[0].selected==true){
 
-        })   
+            let arrayOfLikes = [];
 
-        // Filtre de popularité
-        popularityFilter.addEventListener('click', e => {
+            for(let mediaPiece of allMediaPieces){    
 
-            let allLikes = mediaPiece.childNodes[3].childNodes[3].childNodes[0].innerHTML;
-            console.log(allLikes)
+                arrayOfLikes.push(mediaPiece);
 
-        }) 
+                arrayOfLikes
+                .sort((a,b)=>b.childNodes[3].childNodes[3].childNodes[0].textContent-a.childNodes[3].childNodes[3].childNodes[0].textContent)
+                .forEach(mediaPiece=>allMediaSection.appendChild(mediaPiece));
+                
+            }
+        
+        // Réorganise par ordre d'ancienneté
+        } else if(selectFilters.options[1].selected==true){
 
-        // Filtre de titre
-        titleFilter.addEventListener('click', e => {
+            let arrayOfLikes = [];
 
-            let allTitles = mediaPiece.childNodes[3].childNodes[1].innerHTML;
-            console.log(allTitles)
+            for(let mediaPiece of allMediaPieces){    
 
-        }) 
+                arrayOfLikes.push(mediaPiece);
+
+                arrayOfLikes
+                .sort((a,b)=>{ 
+                    return new Date(a.childNodes[1].dataset.date).valueOf() - new Date(b.childNodes[1].dataset.date).valueOf();
+                })
+                .forEach(mediaPiece=>allMediaSection.appendChild(mediaPiece));
+
+                
+            }
+
+        // Réorganise par ordre alphabétique
+        } else if(selectFilters.options[2].selected==true){
+
+            let arrayOfLikes = [];
+
+            for(let mediaPiece of allMediaPieces){    
+
+                arrayOfLikes.push(mediaPiece);
+
+                arrayOfLikes.sort((a, b) => {
+                    if (a.childNodes[3].childNodes[1].innerHTML.toLowerCase() < b.childNodes[3].childNodes[1].innerHTML.toLowerCase()) {
+                        return -1;
+                    } else if (a.childNodes[3].childNodes[1].innerHTML.toLowerCase() > b.childNodes[3].childNodes[1].innerHTML.toLowerCase()) {
+                        return 1;
+                    }
+                });
+                arrayOfLikes.forEach(mediaPiece=>allMediaSection.appendChild(mediaPiece));
+                
+            }
+        }
     }
 }
 

@@ -108,63 +108,30 @@ main #infos-window #all-likes:after {
 main .media-filters {
   padding: 0;
   margin: 0;
+  display: flex;
 }
 main .media-filters p {
   font-weight: bold;
+  align-self: center;
 }
-main .media-filters ul {
-  background: #901C1C;
-  border-radius: 0.2em;
-  margin-left: 1em;
-  padding: 0.5em;
-  box-shadow: 0px 4px 2px lightgrey;
-  width: 9em;
-}
-main .media-filters ul li {
-  list-style-type: none;
-  border-bottom: 1px solid white;
-}
-main .media-filters ul li button {
-  padding: 0.8em;
-  padding-right: 3em;
-  width: 100%;
-  text-align: left;
-  color: white;
-  background-color: transparent;
+main .media-filters #select-filters {
+  background-color: #901C1C;
   border: none;
-  font-size: 1em;
-  cursor: pointer;
-}
-main .media-filters ul li:nth-child(5) {
-  border-bottom: none;
-}
-main .media-filters ul label {
-  display: block;
-  padding: 0.3em 0.8em;
+  border-radius: 0.2em;
+  padding: 1em;
+  margin: 1em;
   color: white;
-  cursor: pointer;
+  font-size: 1em;
 }
-main .media-filters ul label:before {
-  content: "v";
-  margin-left: 7em;
-  font-weight: bold;
-}
-main .media-filters ul label:after {
-  content: "^";
-  margin-left: 7em;
-  font-weight: bold;
-}
-main .media-filters ul input[type=checkbox] {
-  display: none;
-}
-main .media-filters ul #collapse:checked ~ li {
-  display: none;
+main .media-filters #select-filters option {
+  border-radius: 0.2em;
+  padding: 1em;
 }
 main #media-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-bottom: 1em;
+  padding-bottom: 3em;
   width: 100%;
 }
 main #media-section .media-piece {
@@ -345,7 +312,7 @@ main #media-section .media-piece .info #likes-info #heart:before {
   main #photographer-banner {
     background-color: white;
     padding: 0;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
     height: 9em;
   }
   main #photographer-banner #contact {

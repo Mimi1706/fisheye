@@ -119,6 +119,7 @@ async function asyncCall() {
    for (let m in mediaInfos){
 
       let emptyHeart = mediaInfos[m].childNodes[2];
+
       emptyHeart.addEventListener('click', e => {
    
          if(emptyHeart.className == 'change'){
@@ -135,7 +136,7 @@ async function asyncCall() {
          }
      })
    }
-}
- 
+} 
+
 asyncCall();
 

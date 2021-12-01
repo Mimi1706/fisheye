@@ -34,14 +34,11 @@
         <!-- LISTE DE FILTRES -->
         <nav class="media-filters flex" aria-label="filters">
             <p>Trier par</p>
-            <ul>
-                <input type="checkbox" id="collapse"/></input>
-                <label for="collapse"></label>  
-
-                <li><button id="filter-popularity" aria-label="filter-popularity">Popularité</button></li>
-                <li><button id="filter-date" aria-label="filter-date">Date</button></li>
-                <li><button id="filter-title" aria-label="filter-title">Titre</button></li>
-            </ul>
+            <select id="select-filters">
+                <option id="filter-popularity" aria-label="filter-popularity">Popularité</option>
+                <option id="filter-date" aria-label="filter-date">Date</option>
+                <option id="filter-title" aria-label="filter-title">Titre</option>
+            </select>
         </nav>
 
         <!-- SECTION DES MÉDIAS -->
