@@ -1,5 +1,6 @@
 // GENERAL
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
 .flex{
     display:flex;
@@ -217,6 +218,23 @@ main{
     background-color: white;
     display: none;
 
+    #previous-button, #next-button{
+        color: $primary-color;
+        font-size: 5em;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+        font-family: 'Acme';
+    }
+
+    #previous-button{
+        order:1;
+    }
+
+    #next-button{
+        order:3;
+    }
+
     span{
         position: absolute;
         z-index: 1000;
@@ -228,12 +246,15 @@ main{
     }
 
     .lightbox-content{
+        order:2;
         display:flex;
         padding-top:0.2em;
         font-weight: 300;
         font-size: 1.3em;
         flex-direction: column-reverse;
         color: $primary-color;
+        padding-right: 1em;
+        padding-left: 1em;
 
         img,video{
             max-width: 80vw;

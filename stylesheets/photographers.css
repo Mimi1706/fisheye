@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
 .flex {
   display: flex;
 }
@@ -184,6 +185,20 @@ main #media-section .media-piece .info #likes-info #heart:before {
   background-color: white;
   display: none;
 }
+.lightbox #previous-button, .lightbox #next-button {
+  color: #901C1C;
+  font-size: 5em;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Acme";
+}
+.lightbox #previous-button {
+  order: 1;
+}
+.lightbox #next-button {
+  order: 3;
+}
 .lightbox span {
   position: absolute;
   z-index: 1000;
@@ -194,12 +209,15 @@ main #media-section .media-piece .info #likes-info #heart:before {
   cursor: pointer;
 }
 .lightbox .lightbox-content {
+  order: 2;
   display: flex;
   padding-top: 0.2em;
   font-weight: 300;
   font-size: 1.3em;
   flex-direction: column-reverse;
   color: #901C1C;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 .lightbox .lightbox-content img, .lightbox .lightbox-content video {
   max-width: 80vw;

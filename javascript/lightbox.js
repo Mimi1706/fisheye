@@ -1,3 +1,4 @@
+// BESOIN DES ÉLÉMENTS DOM
 // Attends que le contenu se charge
 function sendData() {
     return new Promise(resolve => {
@@ -43,10 +44,26 @@ async function asyncCall() {
             lightboxContent.innerHTML += medialAlt;
 
             // Ajoute le titre à l'image ou la vidéo
-            lightboxMedia.setAttribute('aria-label', medialAlt);
+            lightboxMedia.setAttribute('title', medialAlt);
 
             // Ajout le media dans la lightbox
             lightboxContent.appendChild(lightboxMedia)
+
+
+            // Boutons pour passer d'un media a un autre
+            let previousButton = document.getElementById('previous-button')
+            let nextButton = document.getElementById('next-button')
+
+            previousButton.addEventListener('click', e => {
+
+                console.log(media)
+                console.log(media.dataset.name)
+
+            })
+
+            nextButton.addEventListener('click', e => {
+                
+            })
         })
     })
 }
