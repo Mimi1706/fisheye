@@ -19,7 +19,7 @@ async function asyncCall() {
 
     // Ouvre la lightbox au clic sur un média
     allMedia.forEach(media => {
-        media.addEventListener('click', function addMediaInLightbox() {
+        media.addEventListener('click', e => {
 
             // Aria-labels
             document.getElementById('main-content').setAttribute('aria-hidden', 'true');
@@ -39,18 +39,19 @@ async function asyncCall() {
             // Ajout le media dans la lightbox
             lightboxContent.appendChild(cloneMedia)
 
-            // Boutons pour passer d'un media a un autre
-            let previousButton = document.getElementById('previous-button')
-            let nextButton = document.getElementById('next-button')
-
-            previousButton.addEventListener('click', e => {
-
-            })
-
-            nextButton.addEventListener('click', e => {
-
-            })
         })
+    })
+
+    // Boutons pour passer d'un media a un autre
+    let previousButton = document.getElementById('previous-button')
+    let nextButton = document.getElementById('next-button')
+
+    previousButton.addEventListener('click', e => {
+
+    })
+
+    nextButton.addEventListener('click', e => {
+
     })
 }
   
