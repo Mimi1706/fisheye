@@ -4,7 +4,7 @@ function sendData() {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve();
-      }, 1000);
+      }, 500);
     });
 }
 
@@ -14,11 +14,12 @@ async function asyncCall() {
 
     const lightbox = document.querySelector('.lightbox');
     const lightboxContent = document.querySelector('.lightbox-content')
-    const lightboxImages = document.querySelectorAll('.media-content');
+    const mediaSection = document.getElementById('media-section');
+    const allMedia = mediaSection.querySelectorAll('.media-content');
 
     // Ouvre la lightbox au clic sur un média
-    lightboxImages.forEach(media => {
-        media.addEventListener('click', e => {
+    allMedia.forEach(media => {
+        media.addEventListener('click', function addMediaInLightbox() {
 
             // Aria-labels
             document.getElementById('main-content').setAttribute('aria-hidden', 'true');
@@ -28,27 +29,15 @@ async function asyncCall() {
             lightbox.classList.add('active');
             unloadScrollBars()
 
-            // Ajoute l'image ou la vidéo dans la lightbox
-            if(/\.jpe?g$/i.test(media.src)){
-                var lightboxMedia = document.createElement('img')
-            } else {
-                var lightboxMedia = document.createElement('video')
-                lightboxMedia.controls = true;
-            }
-
-            // Donne la source du media à la lightbox 
-            lightboxMedia.src = media.src;
+            // Clone le media dans la lightbox 
+            var cloneMedia = media.cloneNode(true);
 
             // Ajoute le titre sous l'image ou la vidéo
             let medialAlt = media.dataset.name;
             lightboxContent.innerHTML += medialAlt;
 
-            // Ajoute le titre à l'image ou la vidéo
-            lightboxMedia.setAttribute('title', medialAlt);
-
             // Ajout le media dans la lightbox
-            lightboxContent.appendChild(lightboxMedia)
-
+            lightboxContent.appendChild(cloneMedia)
 
             // Boutons pour passer d'un media a un autre
             let previousButton = document.getElementById('previous-button')
@@ -56,13 +45,10 @@ async function asyncCall() {
 
             previousButton.addEventListener('click', e => {
 
-                console.log(media)
-                console.log(media.dataset.name)
-
             })
 
             nextButton.addEventListener('click', e => {
-                
+
             })
         })
     })
