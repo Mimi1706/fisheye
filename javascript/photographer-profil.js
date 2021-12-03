@@ -206,6 +206,7 @@ async function asyncCall() {
    let fixedAllLikes = document.getElementById('all-likes');
    fixedAllLikes.innerHTML += sum;
 
+   
 } 
 
 asyncCall();

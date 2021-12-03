@@ -4,7 +4,7 @@ function sendData() {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve();
-      }, 500);
+      }, 1000);
     });
 }
 
@@ -39,23 +39,39 @@ async function asyncCall() {
             // Ajout le media dans la lightbox
             lightboxContent.appendChild(cloneMedia)
 
+
+            // Boutons pour passer d'un media a un autre
+            let previousButton = document.getElementById('previous-button')
+            let nextButton = document.getElementById('next-button')
+
+            previousButton.addEventListener('click', e => {
+
+                while (lightboxContent.firstChild) {
+                    lightboxContent.removeChild(lightboxContent.firstChild);
+                }
+
+                const mediaSection = document.getElementById('media-section');
+                const allMedia = mediaSection.querySelectorAll('.media-content');
+
+                let thisIndex = Array.prototype.indexOf.call(mediaSection.querySelectorAll('.media-content'), media)
+                thisIndex -=1;
+
+                var cloneMedia = allMedia[thisIndex].cloneNode(true);
+
+                lightboxContent.appendChild(cloneMedia)
+            })
+
+            nextButton.addEventListener('click', e => {
+
+                
+
+            })
         })
-    })
-
-    // Boutons pour passer d'un media a un autre
-    let previousButton = document.getElementById('previous-button')
-    let nextButton = document.getElementById('next-button')
-
-    previousButton.addEventListener('click', e => {
-
-    })
-
-    nextButton.addEventListener('click', e => {
-
     })
 }
   
 asyncCall();
+
 
 // Bouton de la fermeture de la lightbox
 const lightbox = document.querySelector('.lightbox');
