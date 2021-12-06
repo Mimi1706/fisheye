@@ -12,25 +12,25 @@ function sendData() {
 async function asyncCall() {
     await sendData();
 
-    let mediaSection = document.getElementById('media-section');
-    let allmedia = Array.from(mediaSection.querySelectorAll('.media-content'))
-
     class lightbox {
 
         static init () {
 
-            console.log(allmedia)
-
-            const gallery = allmedia.map(media => media)
+            let allmedia = document.getElementById('media-section').querySelectorAll('.media-content')
 
             allmedia.forEach(media => media.addEventListener('click', e => {
+
+                let mediaSection = document.getElementById('media-section');
+                let allmedia = Array.from(mediaSection.querySelectorAll('.media-content'))
+
+                let gallery = allmedia.map(media => media)
                 const mediaName = media.dataset.name
                 new lightbox(media, mediaName, gallery)
                 unloadScrollBars()
             }))
         }
 
-        constructor (media, mediaName,gallery) {
+        constructor (media, mediaName, gallery) {
             this.element = this.buildDOM(media)
             this.addMedia(media, mediaName)
             document.body.appendChild(this.element)
@@ -83,14 +83,15 @@ async function asyncCall() {
 
         // Ajoute le media à l'intérieur du conteneur
         addMedia (media, mediaName) {
-            this.media = null;
             var lightboxContent = this.element.querySelector('.lightboxMedia')
-            var lightboxTitle = this.element.querySelector('#lightbox-media-title')
             lightboxContent.innerHTML = '';
             this.media = media
-            mediaName = this.media.dataset.name
             var cloneMedia = media.cloneNode(true);
             lightboxContent.appendChild(cloneMedia)
+
+            // Ajout du titre du media
+            var lightboxTitle = this.element.querySelector('#lightboxMedia-title')
+            mediaName = this.media.dataset.name
             lightboxTitle.innerHTML= mediaName;
         }
 
@@ -103,7 +104,7 @@ async function asyncCall() {
             dom.innerHTML = `
         
                 <div class="lightboxContent"><div class="lightboxMedia"></div>
-                <h1 id="lightbox-media-title"></h1></div>
+                <h1 id="lightboxMedia-title"></h1></div>
                 
                 <button id="lightbox-previous-button">Précédent</button>
                 <button id="lightbox-next-button">Suivant</button>
