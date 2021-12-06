@@ -253,25 +253,35 @@ main{
         cursor: pointer;
     }
 
-    .lightbox-content{
+    .lightboxContent{
+        flex-direction: column;
         order:2;
-        display:flex;
-        padding-top:0.2em;
-        font-weight: 300;
-        font-size: 1.3em;
-        flex-direction: column-reverse;
-        color: $primary-color;
-        padding-right: 1em;
-        padding-left: 1em;
 
-        img,video{
-            order:1;
-            max-width: 80vw;
-            max-height: 85vh;
-            object-fit: scale-down;
-            border-right: 4px solid lightgrey;
-            border-radius: 0.2em;
-            margin-bottom: 0.2em;
+        .lightboxMedia{
+            padding-top:0.2em;
+            font-weight: 300;
+            font-size: 1.3em;
+            color: $primary-color;
+            padding-right: 1em;
+            padding-left: 1em;
+    
+            img,video{
+                max-width: 80vw;
+                max-height: 85vh;
+                object-fit: scale-down;
+                border-right: 4px solid lightgrey;
+                border-radius: 0.2em;
+                margin-bottom: 0.2em;
+            }
+        }
+    
+        h1{
+            color: $primary-color;
+            font-size:1.3em;
+            font-weight: 100;
+            padding: 0;
+            padding-left:1em;
+            margin:0;
         }
     }
 }

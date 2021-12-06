@@ -24,15 +24,15 @@ async function asyncCall() {
             const gallery = allmedia.map(media => media)
 
             allmedia.forEach(media => media.addEventListener('click', e => {
-                new lightbox(media, gallery)
+                const mediaName = media.dataset.name
+                new lightbox(media, mediaName, gallery)
                 unloadScrollBars()
             }))
         }
 
-        constructor (media, gallery) {
+        constructor (media, mediaName,gallery) {
             this.element = this.buildDOM(media)
-            this.addMedia(media)
-            this.addTitle(media)
+            this.addMedia(media, mediaName)
             document.body.appendChild(this.element)
 
             this.gallery = gallery
@@ -82,13 +82,16 @@ async function asyncCall() {
         }
 
         // Ajoute le media à l'intérieur du conteneur
-        addMedia (media) {
+        addMedia (media, mediaName) {
             this.media = null;
-            var lightboxContent = this.element.querySelector('.lightbox-content')
+            var lightboxContent = this.element.querySelector('.lightboxMedia')
+            var lightboxTitle = this.element.querySelector('#lightbox-media-title')
             lightboxContent.innerHTML = '';
             this.media = media
+            mediaName = this.media.dataset.name
             var cloneMedia = media.cloneNode(true);
             lightboxContent.appendChild(cloneMedia)
+            lightboxTitle.innerHTML= mediaName;
         }
 
         buildDOM (media) {
@@ -99,8 +102,8 @@ async function asyncCall() {
             // Crée le conteneur pour le media
             dom.innerHTML = `
         
-                <div class="lightbox-content"></div>
-                <h1 id="lightbox-media-title"></h1>
+                <div class="lightboxContent"><div class="lightboxMedia"></div>
+                <h1 id="lightbox-media-title"></h1></div>
                 
                 <button id="lightbox-previous-button">Précédent</button>
                 <button id="lightbox-next-button">Suivant</button>
@@ -120,6 +123,7 @@ async function asyncCall() {
             
             return dom
         }
+
     }
 
     lightbox.init()
@@ -129,9 +133,7 @@ async function asyncCall() {
 asyncCall();
 
 
-// Bouton de la fermeture de la lightbox
 function closelightbox(){
-
 
     // Aria-labels
     document.getElementById('main-content').setAttribute('aria-hidden', 'false');

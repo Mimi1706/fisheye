@@ -217,25 +217,33 @@ main #media-section .media-piece .info #likes-info #heart:before {
   border: none;
   cursor: pointer;
 }
-.lightbox .lightbox-content {
+.lightbox .lightboxContent {
+  flex-direction: column;
   order: 2;
-  display: flex;
+}
+.lightbox .lightboxContent .lightboxMedia {
   padding-top: 0.2em;
   font-weight: 300;
   font-size: 1.3em;
-  flex-direction: column-reverse;
   color: #901C1C;
   padding-right: 1em;
   padding-left: 1em;
 }
-.lightbox .lightbox-content img, .lightbox .lightbox-content video {
-  order: 1;
+.lightbox .lightboxContent .lightboxMedia img, .lightbox .lightboxContent .lightboxMedia video {
   max-width: 80vw;
   max-height: 85vh;
   object-fit: scale-down;
   border-right: 4px solid lightgrey;
   border-radius: 0.2em;
   margin-bottom: 0.2em;
+}
+.lightbox .lightboxContent h1 {
+  color: #901C1C;
+  font-size: 1.3em;
+  font-weight: 100;
+  padding: 0;
+  padding-left: 1em;
+  margin: 0;
 }
 
 #form-bg {
