@@ -12,77 +12,126 @@ function sendData() {
 async function asyncCall() {
     await sendData();
 
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxContent = document.querySelector('.lightbox-content')
-    const mediaSection = document.getElementById('media-section');
-    const allMedia = mediaSection.querySelectorAll('.media-content');
+    let mediaSection = document.getElementById('media-section');
+    let allmedia = Array.from(mediaSection.querySelectorAll('.media-content'))
 
-    // Ouvre la lightbox au clic sur un média
-    allMedia.forEach(media => {
-        media.addEventListener('click', e => {
+    class lightbox {
+
+        static init () {
+
+            console.log(allmedia)
+
+            const gallery = allmedia.map(media => media)
+
+            allmedia.forEach(media => media.addEventListener('click', e => {
+                new lightbox(media, gallery)
+                unloadScrollBars()
+            }))
+        }
+
+        constructor (media, gallery) {
+            this.element = this.buildDOM(media)
+            this.addMedia(media)
+            this.addTitle(media)
+            document.body.appendChild(this.element)
+
+            this.gallery = gallery
+
+            this.onKeyUp = this.onKeyUp.bind(this)
+            document.addEventListener('keyup', this.onKeyUp)
+        }
+
+        // Fonction pour fermer la lightbox (souris)
+        close(e) {
+            e.preventDefault()
+            reloadScrollBars()
+            this.element.parentElement.removeChild(this.element)
+            document.removeEventListener('keyup', this.onKeyUp)
+        }
+
+        // Fonction pour [fermer/suivant/précédent] de la lightbox (clavier)
+        onKeyUp(e) {
+            if (e.key == 'Escape'){
+                this.close(e)
+                reloadScrollBars()
+            } else if (e.key == 'ArrowLeft') {
+                this.previous(e)
+            } else if (e.key == 'ArrowRight') {
+                this.next(e)
+            }
+        }
+
+        // Fonction pour aller au media suivant
+        previous (e) {
+            e.preventDefault()
+            let currentIndex = this.gallery.findIndex(thisIndex => thisIndex == this.media)
+            if(currentIndex == 0) {
+                currentIndex = this.gallery.length
+            }
+            this.addMedia(this.gallery[currentIndex - 1])
+        }
+
+        // Fonction pour aller au media suivant
+        next (e) {
+            e.preventDefault()
+            let currentIndex = this.gallery.findIndex(thisIndex => thisIndex == this.media)
+            if(currentIndex == this.gallery.length - 1) {
+                currentIndex = -1
+            }
+            this.addMedia(this.gallery[currentIndex + 1])
+        }
+
+        // Ajoute le media à l'intérieur du conteneur
+        addMedia (media) {
+            this.media = null;
+            var lightboxContent = this.element.querySelector('.lightbox-content')
+            lightboxContent.innerHTML = '';
+            this.media = media
+            var cloneMedia = media.cloneNode(true);
+            lightboxContent.appendChild(cloneMedia)
+        }
+
+        buildDOM (media) {
+            const dom = document.createElement('div')
+            dom.classList.add('lightbox')
+            JSON.stringify(media)
+            
+            // Crée le conteneur pour le media
+            dom.innerHTML = `
+        
+                <div class="lightbox-content"></div>
+                <h1 id="lightbox-media-title"></h1>
+                
+                <button id="lightbox-previous-button">Précédent</button>
+                <button id="lightbox-next-button">Suivant</button>
+        
+                <button onclick="closelightbox()" id="lightbox-close-button">Fermer</button>
+    
+            `
 
             // Aria-labels
             document.getElementById('main-content').setAttribute('aria-hidden', 'true');
             document.getElementById('header').setAttribute('aria-hidden', 'true');
             document.getElementById('infos-window').setAttribute('aria-hidden', 'true');
 
-            lightbox.classList.add('active');
-            unloadScrollBars()
+            dom.querySelector('#lightbox-close-button').addEventListener('click', this.close.bind(this))
+            dom.querySelector('#lightbox-previous-button').addEventListener('click', this.previous.bind(this))
+            dom.querySelector('#lightbox-next-button').addEventListener('click', this.next.bind(this))
+            
+            return dom
+        }
+    }
 
-            // Clone le media dans la lightbox 
-            var cloneMedia = media.cloneNode(true);
+    lightbox.init()
 
-            // Ajoute le titre sous l'image ou la vidéo
-            let medialAlt = media.dataset.name;
-            lightboxContent.innerHTML += medialAlt;
-
-            // Ajout le media dans la lightbox
-            lightboxContent.appendChild(cloneMedia)
-
-
-            // Boutons pour passer d'un media a un autre
-            let previousButton = document.getElementById('previous-button')
-            let nextButton = document.getElementById('next-button')
-
-            previousButton.addEventListener('click', e => {
-
-                while (lightboxContent.firstChild) {
-                    lightboxContent.removeChild(lightboxContent.firstChild);
-                }
-
-                const mediaSection = document.getElementById('media-section');
-                const allMedia = mediaSection.querySelectorAll('.media-content');
-
-                let thisIndex = Array.prototype.indexOf.call(mediaSection.querySelectorAll('.media-content'), media)
-                thisIndex -=1;
-
-                var cloneMedia = allMedia[thisIndex].cloneNode(true);
-
-                lightboxContent.appendChild(cloneMedia)
-            })
-
-            nextButton.addEventListener('click', e => {
-
-                
-
-            })
-        })
-    })
 }
-  
+
 asyncCall();
 
 
 // Bouton de la fermeture de la lightbox
-const lightbox = document.querySelector('.lightbox');
-const lightboxContent = document.querySelector('.lightbox-content')
-
 function closelightbox(){
-    document.querySelector('.lightbox').classList.remove('active');
-    reloadScrollBars()
-    while (lightboxContent.firstChild) {
-        lightboxContent.removeChild(lightboxContent.firstChild);
-    }
+
 
     // Aria-labels
     document.getElementById('main-content').setAttribute('aria-hidden', 'false');

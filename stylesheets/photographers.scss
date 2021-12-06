@@ -216,32 +216,40 @@ main{
     width: 100%;
     height: 100%;
     background-color: white;
-    display: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 
-    #previous-button, #next-button{
-        color: $primary-color;
-        font-size: 5em;
-        border: 0;
-        background-color: transparent;
-        cursor: pointer;
-        font-family: 'Acme';
-    }
-
-    #previous-button{
+    #lightbox-previous-button{
         order:1;
+        background: url(/content/SVG/arrow.svg) center center / 100% 100%;
+        width: 25px;
+        height: 30px;
+        text-indent: -3000px;
+        border: none;
+        cursor: pointer;
+        transform: rotate(180deg);
     }
 
-    #next-button{
+    #lightbox-next-button{
         order:3;
+        background: url(/content/SVG/arrow.svg) center center / 100% 100%;
+        width: 25px;
+        height: 30px;
+        text-indent: -3000px;
+        border: none;
+        cursor: pointer;
     }
 
-    span{
-        position: absolute;
-        z-index: 1000;
-        color: $primary-color;
-        font-size: 5em;
-        top:-20px;
+    #lightbox-close-button{
+        position: fixed;
+        background: url(/content/SVG/closebutton.svg) center center / 100% 100%;
+        width: 30px;
+        height: 30px;
+        top:20px;
         right:20px;
+        text-indent: -3000px;
+        border: none;
         cursor: pointer;
     }
 
@@ -257,6 +265,7 @@ main{
         padding-left: 1em;
 
         img,video{
+            order:1;
             max-width: 80vw;
             max-height: 85vh;
             object-fit: scale-down;
@@ -267,11 +276,6 @@ main{
     }
 }
 
-.active{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
 
 // FORMULAIRE
 #form-bg{
