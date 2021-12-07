@@ -197,7 +197,7 @@ main #media-section .media-piece .info #likes-info #heart:before {
   border: none;
   cursor: pointer;
   transform: rotate(180deg);
-  text-indent: -100000px;
+  text-indent: -10000px;
 }
 .lightbox #lightbox-next-button {
   order: 3;
@@ -206,7 +206,7 @@ main #media-section .media-piece .info #likes-info #heart:before {
   height: 30px;
   border: none;
   cursor: pointer;
-  text-indent: -100000px;
+  text-indent: -10000px;
 }
 .lightbox #lightbox-close-button {
   position: fixed;
@@ -217,7 +217,7 @@ main #media-section .media-piece .info #likes-info #heart:before {
   right: 15px;
   border: none;
   cursor: pointer;
-  text-indent: -100000px;
+  text-indent: -10000px;
 }
 .lightbox .lightboxContent {
   flex-direction: column;

@@ -166,6 +166,7 @@ async function asyncCall() {
        }
    }
 
+   checkSelection()
 
    // LIKES 
    // Calcul des likes

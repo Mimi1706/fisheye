@@ -24,15 +24,14 @@ async function asyncCall() {
                 let allmedia = Array.from(mediaSection.querySelectorAll('.media-content'))
 
                 let gallery = allmedia.map(media => media)
-                const mediaName = media.dataset.name
-                new lightbox(media, mediaName, gallery)
+                new lightbox(media, gallery)
                 unloadScrollBars()
             }))
         }
 
-        constructor (media, mediaName, gallery) {
+        constructor (media, gallery) {
             this.element = this.buildDOM(media)
-            this.addMedia(media, mediaName)
+            this.addMedia(media)
             document.body.appendChild(this.element)
 
             this.gallery = gallery
@@ -82,7 +81,7 @@ async function asyncCall() {
         }
 
         // Ajoute le media à l'intérieur du conteneur
-        addMedia (media, mediaName) {
+        addMedia (media) {
             var lightboxContent = this.element.querySelector('.lightboxMedia')
             lightboxContent.innerHTML = '';
             this.media = media
@@ -91,8 +90,18 @@ async function asyncCall() {
 
             // Ajout du titre du media
             var lightboxTitle = this.element.querySelector('#lightboxMedia-title')
-            mediaName = this.media.dataset.name
+            let mediaName = this.media.dataset.name
             lightboxTitle.innerHTML= mediaName;
+
+            // Ajoute les contrôles si le media est une vidéo
+            if (media.nodeName == 'VIDEO') {
+
+                if (cloneMedia.hasAttribute("controls")) {
+                    cloneMedia.removeAttribute("controls")   
+                 } else {
+                    cloneMedia.setAttribute("controls","controls")   
+                 }
+            }
         }
 
         buildDOM (media) {
