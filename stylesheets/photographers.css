@@ -191,7 +191,7 @@ main #media-section .media-piece .info #likes-info #heart:before {
 }
 .lightbox #lightbox-previous-button {
   order: 1;
-  background: url(content/general/arrow.svg) center center/100% 100%;
+  background: url("https://raw.githubusercontent.com/Mimi1706/HanNguyen_6_021121/main/content/general/arrow.svg") center center/100% 100%;
   width: 25px;
   height: 30px;
   border: none;
@@ -201,7 +201,7 @@ main #media-section .media-piece .info #likes-info #heart:before {
 }
 .lightbox #lightbox-next-button {
   order: 3;
-  background: url(content/general/arrow.svg) center center/100% 100%;
+  background: url("https://raw.githubusercontent.com/Mimi1706/HanNguyen_6_021121/main/content/general/arrow.svg") center center/100% 100%;
   width: 25px;
   height: 30px;
   border: none;
@@ -210,7 +210,7 @@ main #media-section .media-piece .info #likes-info #heart:before {
 }
 .lightbox #lightbox-close-button {
   position: fixed;
-  background: url(content/general/closebutton.svg) center center/100% 100%;
+  background: url("https://raw.githubusercontent.com/Mimi1706/HanNguyen_6_021121/4d204a5fd7b4f2367c00c9c9b4e0723cb802a1d9/content/general/closebutton.svg") center center/100% 100%;
   width: 20px;
   height: 20px;
   top: 20px;
