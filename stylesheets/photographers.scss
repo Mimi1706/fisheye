@@ -137,18 +137,20 @@ main{
             align-self: center;
         }
 
-        #select-filters{
+        #select-filters {
             background-color: $primary-color;
             border: none;
             border-radius: 0.2em;
-            padding: 1em;
+            padding: 0.5em 0em;
+            padding-left: 0.3em;
             margin: 1em;
             color:white;
             font-size: 1em;
 
-            option{
+            option {
                 border-radius: 0.2em;
                 padding: 1em;
+                font-size: 1em;
             }
         }
     }
@@ -225,10 +227,10 @@ main{
         background: url(/content/SVG/arrow.svg) center center / 100% 100%;
         width: 25px;
         height: 30px;
-        text-indent: -3000px;
         border: none;
         cursor: pointer;
         transform: rotate(180deg);
+        text-indent: -100000px;
     }
 
     #lightbox-next-button{
@@ -236,21 +238,21 @@ main{
         background: url(/content/SVG/arrow.svg) center center / 100% 100%;
         width: 25px;
         height: 30px;
-        text-indent: -3000px;
         border: none;
         cursor: pointer;
+        text-indent: -100000px;
     }
 
     #lightbox-close-button{
         position: fixed;
         background: url(/content/SVG/closebutton.svg) center center / 100% 100%;
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         top:20px;
-        right:20px;
-        text-indent: -3000px;
+        right:15px;
         border: none;
         cursor: pointer;
+        text-indent: -100000px;
     }
 
     .lightboxContent{
@@ -262,8 +264,8 @@ main{
             font-weight: 300;
             font-size: 1.3em;
             color: $primary-color;
-            padding-right: 1em;
-            padding-left: 1em;
+            padding-right: 0.5em;
+            padding-left: 0.5em;
     
             img,video{
                 max-width: 80vw;
@@ -280,7 +282,7 @@ main{
             font-size:1.3em;
             font-weight: 100;
             padding: 0;
-            padding-left:1em;
+            padding-left:0.5em;
             margin:0;
         }
     }

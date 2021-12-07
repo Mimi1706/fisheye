@@ -50,8 +50,8 @@ const fetchData = async () => {
                if(/\.jpe?g$/i.test(`${allMedia[x].image}`)){
                   allMediaContent.innerHTML +=
                   `
-                     <div class="media-piece" aria-label="picture ${allMedia[x].title}">
-                     <img class="media-content" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}" src="content/media/${allPhotographers[i].id}/${allMedia[x].image}"></img>
+                     <div class="media-piece">
+                     <img class="media-content" alt="${allMedia[x].title}" data-name="${allMedia[x].title}"  aria-label="${allMedia[x].title}" data-date="${allMedia[x].date}" src="content/media/${allPhotographers[i].id}/${allMedia[x].image}"></img>
                      <div class="info">
                      <h2 id="media-content-title" aria-labelledby="title ${allMedia[x].title}">${allMedia[x].title}</h2>
                      <div id="likes-info" aria-label="number of likes"><span class="nb-likes" aria-labelledby="number of likes">${allMedia[x].likes}</span>
@@ -64,8 +64,8 @@ const fetchData = async () => {
                } else {
                   allMediaContent.innerHTML +=
                   `
-                     <div class="media-piece" aria-label="video ${allMedia[x].title}">
-                     <video class="media-content" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}" src="content/media/${allPhotographers[i].id}/${allMedia[x].video}"></video>
+                     <div class="media-piece">
+                     <video class="media-content" alt="${allMedia[x].title}" data-name="${allMedia[x].title}"  aria-label="${allMedia[x].title}" data-date="${allMedia[x].date}" src="content/media/${allPhotographers[i].id}/${allMedia[x].video}"></video>
                      <div class="info">
                      <h2 id="media-content-title" aria-labelledby="title ${allMedia[x].title}">${allMedia[x].title}</h2>
                      <div id="likes-info" aria-label="number of likes"><span class="nb-likes" aria-labelledby="number of likes">${allMedia[x].likes}</span>

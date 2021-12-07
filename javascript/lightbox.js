@@ -106,10 +106,10 @@ async function asyncCall() {
                 <div class="lightboxContent"><div class="lightboxMedia"></div>
                 <h1 id="lightboxMedia-title"></h1></div>
                 
-                <button id="lightbox-previous-button">Précédent</button>
-                <button id="lightbox-next-button">Suivant</button>
+                <button id="lightbox-previous-button" aria-label="previous">Précédent</button>
+                <button id="lightbox-next-button" aria-label="next">Suivant</button>
         
-                <button onclick="closelightbox()" id="lightbox-close-button">Fermer</button>
+                <button onclick="closelightbox()" id="lightbox-close-button" aria-label="close">Fermer</button>
     
             `
 

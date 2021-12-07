@@ -14,7 +14,7 @@
 
     <!-- HEADER -->
     <header id="header">
-        <a href="index.html" class="logo">
+        <a href="index.html" class="logo" aria-describedby="Homepage">
             <img src="content/logo.png" alt="Logo Fisheye">
         </a>
     </header>
@@ -26,15 +26,15 @@
         <section id="photographer-banner" aria-label="photographer informations"></section>
 
         <!-- FENÊTRE D'INFORMATION (LIKES + PRIX/JOUR) -->
-        <div id="infos-window" aria-label="information window">
+        <div id="infos-window" aria-label="information window on likes and price">
             <span id="all-likes"></span>
             <span id="day-price"></span>
         </div>
 
         <!-- LISTE DE FILTRES -->
-        <nav class="media-filters flex" aria-label="filters">
+        <nav class="media-filters flex">
             <p>Trier par</p>
-            <select id="select-filters">
+            <select id="select-filters" aria-label="list of filters">
                 <option id="filter-popularity" aria-label="filter-popularity">Popularité</option>
                 <option id="filter-date" aria-label="filter-date">Date</option>
                 <option id="filter-title" aria-label="filter-title">Titre</option>
