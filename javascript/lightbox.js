@@ -86,20 +86,21 @@ async function asyncCall() {
             lightboxContent.innerHTML = '';
             this.media = media
             var cloneMedia = media.cloneNode(true);
-            lightboxContent.appendChild(cloneMedia)
+
+            lightboxContent.appendChild(cloneMedia.firstChild)
 
             // Ajout du titre du media
             var lightboxTitle = this.element.querySelector('#lightboxMedia-title')
-            let mediaName = this.media.dataset.name
+            let mediaName = this.media.firstChild.dataset.name
             lightboxTitle.innerHTML= mediaName;
 
             // Ajoute les contrôles si le media est une vidéo
-            if (media.nodeName == 'VIDEO') {
+            if (media.firstChild.nodeName == 'VIDEO') {
 
-                if (cloneMedia.hasAttribute("controls")) {
-                    cloneMedia.removeAttribute("controls")   
+                if (lightboxContent.firstChild.hasAttribute("controls")) {
+                    lightboxContent.firstChild.removeAttribute("controls")   
                  } else {
-                    cloneMedia.setAttribute("controls","controls")   
+                    lightboxContent.firstChild.setAttribute("controls","controls")   
                  }
             }
         }

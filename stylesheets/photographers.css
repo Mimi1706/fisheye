@@ -137,7 +137,12 @@ main #media-section {
 main #media-section .media-piece {
   width: 31%;
 }
-main #media-section .media-piece img, main #media-section .media-piece video {
+main #media-section .media-piece .media-content {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+}
+main #media-section .media-piece .media-content img, main #media-section .media-piece .media-content video {
   height: 21em;
   width: 100%;
   object-fit: cover;
