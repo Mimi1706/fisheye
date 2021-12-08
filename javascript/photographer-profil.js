@@ -51,12 +51,12 @@ const fetchData = async () => {
                   allMediaContent.innerHTML +=
                   `
                      <article class="media-piece">
-                     <img class="media-content" alt="${allMedia[x].title}" data-name="${allMedia[x].title}"  aria-label="${allMedia[x].title}" data-date="${allMedia[x].date}" src="content/media/${allPhotographers[i].id}/${allMedia[x].image}" tabindex="0" "></img>
+                     <img class="media-content" alt="${allMedia[x].title}" data-name="${allMedia[x].title}"  aria-label="${allMedia[x].title}" data-date="${allMedia[x].date}" src="content/media/${allPhotographers[i].id}/${allMedia[x].image}"></img>
                      <div class="info">
                      <h2 id="media-content-title" aria-labelledby="title ${allMedia[x].title}">${allMedia[x].title}</h2>
                      <div id="likes-info" aria-label="number of likes"><span class="nb-likes" aria-labelledby="number of likes">${allMedia[x].likes}</span>
-                     <button id="heart" aria-labelledby="click to like" tabindex="0">&#9825;</button></div>
-                     </div>
+                     <button id="heart" aria-labelledby="click to like">&#9825;</button></div>
+                     </div> 
                      </article>
                   `;
 
@@ -64,12 +64,12 @@ const fetchData = async () => {
                } else {
                   allMediaContent.innerHTML +=
                   `
-                     <article class="media-piece" tabindex="0">
-                     <video class="media-content" alt="${allMedia[x].title}" data-name="${allMedia[x].title}"  aria-label="${allMedia[x].title}" data-date="${allMedia[x].date}" src="content/media/${allPhotographers[i].id}/${allMedia[x].video}" tabindex="0" "></video>
+                     <article class="media-piece">
+                     <video class="media-content" alt="${allMedia[x].title}" data-name="${allMedia[x].title}"  aria-label="${allMedia[x].title}" data-date="${allMedia[x].date}" src="content/media/${allPhotographers[i].id}/${allMedia[x].video}" "></video>
                      <div class="info">
                      <h2 id="media-content-title" aria-labelledby="title ${allMedia[x].title}">${allMedia[x].title}</h2>
                      <div id="likes-info" aria-label="number of likes"><span class="nb-likes" aria-labelledby="number of likes">${allMedia[x].likes}</span>
-                     <button id="heart" aria-labelledby="click to like" tabindex="0">&#9825;</button></div>
+                     <button id="heart" aria-labelledby="click to like">&#9825;</button></div>
                      </div>
                      </article>
                   `;
