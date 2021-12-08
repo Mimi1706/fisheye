@@ -117,12 +117,9 @@ main{
         font-size: 1.1em;
         z-index:1;
     
-        #all-likes{
-            font-family: -apple-system;
-        }
-    
         #all-likes:after{
-            content: "\2665"
+            content: "\2665";
+            font-family: system-ui;
         }
     }
 
@@ -195,8 +192,8 @@ main{
                     color:$primary-color;
 
                     #heart{
-                        font-family: -apple-system;
                         cursor: pointer;
+                        font-family: system-ui;
                     }
 
                     #heart:before{

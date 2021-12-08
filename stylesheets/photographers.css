@@ -99,11 +99,9 @@ main #infos-window {
   font-size: 1.1em;
   z-index: 1;
 }
-main #infos-window #all-likes {
-  font-family: -apple-system;
-}
 main #infos-window #all-likes:after {
   content: "♥";
+  font-family: system-ui;
 }
 main .media-filters {
   padding: 0;
@@ -168,8 +166,8 @@ main #media-section .media-piece .info #likes-info {
   color: #901C1C;
 }
 main #media-section .media-piece .info #likes-info #heart {
-  font-family: -apple-system;
   cursor: pointer;
+  font-family: system-ui;
 }
 main #media-section .media-piece .info #likes-info #heart:before {
   content: attr(data-before);

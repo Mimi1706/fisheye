@@ -104,7 +104,7 @@ body{
             width: auto;
             justify-content: space-around;
 
-            div{
+            article{
                 margin-bottom: 2em;
                 text-align: center;
                 width: 25vw;
@@ -222,7 +222,7 @@ body{
             flex-flow: column wrap;
             justify-content: center;
 
-            div{
+            article{
                 width: auto;
             }
         }
@@ -272,7 +272,7 @@ body{
         #photographers{
             margin-top: 1em;
 
-            div{
+            article{
                 width: 40vw;
             }
         }

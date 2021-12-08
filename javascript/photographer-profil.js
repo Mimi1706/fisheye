@@ -153,6 +153,7 @@ async function asyncCall() {
 
                arrayOfLikes.push(mediaPiece);
 
+               // Fait monter ou descendre dans l'index
                arrayOfLikes.sort((a, b) => {
                    if (a.childNodes[3].childNodes[1].innerHTML.toLowerCase() < b.childNodes[3].childNodes[1].innerHTML.toLowerCase()) {
                        return -1;

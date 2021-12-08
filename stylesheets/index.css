@@ -84,16 +84,16 @@ main #photographers {
   width: auto;
   justify-content: space-around;
 }
-main #photographers div {
+main #photographers article {
   margin-bottom: 2em;
   text-align: center;
   width: 25vw;
   flex-flow: column wrap;
 }
-main #photographers div a {
+main #photographers article a {
   text-decoration: none;
 }
-main #photographers div a img {
+main #photographers article a img {
   height: 12em;
   width: 12em;
   object-fit: cover;
@@ -101,34 +101,34 @@ main #photographers div a img {
   border-radius: 10em;
   box-shadow: 0px 3px 10px grey;
 }
-main #photographers div a h2 {
+main #photographers article a h2 {
   margin: 0;
   padding: 0;
   font-weight: 300;
   font-size: 1.8em;
   color: #D3573C;
 }
-main #photographers div .location {
+main #photographers article .location {
   margin: 0;
   padding: 0;
   font-weight: 100;
   font-size: 0.8em;
   color: #901C1C;
 }
-main #photographers div .tagline {
+main #photographers article .tagline {
   margin: 0;
   padding: 0;
   font-weight: 100;
   font-size: 0.7em;
 }
-main #photographers div .price {
+main #photographers article .price {
   margin: 0;
   padding: 0;
   font-weight: 100;
   font-size: 0.6em;
   color: grey;
 }
-main #photographers div .filter {
+main #photographers article .filter {
   margin: 0;
   margin-top: 0.5em;
   padding: 0;
@@ -136,7 +136,7 @@ main #photographers div .filter {
   justify-content: center;
   list-style-type: none;
 }
-main #photographers div .filter li {
+main #photographers article .filter li {
   margin-right: 5px;
   padding: 2px 10px;
   border: 1px solid lightgrey;
@@ -180,7 +180,7 @@ main #photographers div .filter li {
     flex-flow: column wrap;
     justify-content: center;
   }
-  main #photographers div {
+  main #photographers article {
     width: auto;
   }
 }
@@ -217,7 +217,7 @@ main #photographers div .filter li {
   main #photographers {
     margin-top: 1em;
   }
-  main #photographers div {
+  main #photographers article {
     width: 40vw;
   }
 }
