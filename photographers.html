@@ -14,7 +14,7 @@
 
     <!-- HEADER -->
     <header id="header">
-        <a href="index.html" class="logo" aria-describedby="Homepage">
+        <a href="index.html" class="logo" aria-describedby="Homepage" tabindex="0">
             <img src="content/general/logo.png" alt="Logo Fisheye">
         </a>
     </header>
@@ -24,6 +24,30 @@
 
         <!-- BANNIÈRE DU PROFIL -->
         <section id="photographer-banner" aria-label="photographer informations"></section>
+
+
+        <!-- FORMULAIRE -->
+        <div id="form-bg"></div>
+
+        <form id="form" role="group" aria-labelledby="contact form" role="dialog">
+            <h1 id="Photographer-Name">Contactez-moi </br></h1>
+            
+            <div><label for="firstName" >Prénom</label></br>
+            <input type="text" name="firstName" id="firstName-field" input="firstName" aria-labelledby="first name input"></div>
+
+            <div><label for="lastName">Nom</label></br>
+            <input type="text" name="lastName" id="lastName-field" input="lastName" aria-labelledby="last name input"></div>
+
+            <div><label for="email">Email</label></br>
+            <input type="text" name="mail" id="email-field" input="mail" aria-labelledby="email input"></div>
+
+            <div><label for="message">Votre message</label></br>
+            <textarea type="text" name="message" id="message-field" input="message" aria-labelledby="message input"></textarea></div>
+
+            <input type="submit" id="submit-btn" class="submit-btn" value="Envoyer" aria-labelledby="send form button"/>
+
+            <button onclick="closeForm('none')" class="close-btn" aria-label="close form"></button>
+        </form>
 
         <!-- FENÊTRE D'INFORMATION (LIKES + PRIX/JOUR) -->
         <div id="infos-window" aria-label="information window on likes and price">
@@ -45,29 +69,6 @@
         <section id="media-section" aria-label="media section"></section>
 
     </main>
-
-    <!-- FORMULAIRE -->
-    <div id="form-bg"></div>
-
-    <form id="form" role="group" aria-labelledby="contact form" role="dialog">
-        <h1 id="Photographer-Name">Contactez-moi </br></h1>
-        
-        <div><label for="firstName" >Prénom</label></br>
-        <input type="text" name="firstName" id="firstName-field" input="firstName" aria-labelledby="first name input"></div>
-
-        <div><label for="lastName">Nom</label></br>
-        <input type="text" name="lastName" id="lastName-field" input="lastName" aria-labelledby="last name input"></div>
-
-        <div><label for="email">Email</label></br>
-        <input type="text" name="mail" id="email-field" input="mail" aria-labelledby="email input"></div>
-
-        <div><label for="message">Votre message</label></br>
-        <textarea type="text" name="message" id="message-field" input="message" aria-labelledby="message input"></textarea></div>
-
-        <input type="submit" id="submit-btn" class="submit-btn" value="Envoyer" aria-labelledby="send form button"/>
-
-        <div><span onclick="closeForm('none')" class="close-btn" aria-label="close form" tabindex="0">&#215;</span></div>
-    </form>
 
 </body>
 

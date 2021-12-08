@@ -75,6 +75,7 @@ header h1 {
   border-radius: 0.2em;
   font-weight: 500;
   font-size: 0.9em;
+  border: none;
 }
 
 main #photographers {
