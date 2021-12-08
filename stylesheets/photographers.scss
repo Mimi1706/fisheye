@@ -194,6 +194,11 @@ main{
                     #heart{
                         cursor: pointer;
                         font-family: system-ui;
+                        font-size: 1em;
+                        color: $primary-color;
+                        border: none;
+                        background-color: transparent;
+                        padding: 0;
                     }
 
                     #heart:before{

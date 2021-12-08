@@ -168,6 +168,11 @@ main #media-section .media-piece .info #likes-info {
 main #media-section .media-piece .info #likes-info #heart {
   cursor: pointer;
   font-family: system-ui;
+  font-size: 1em;
+  color: #901C1C;
+  border: none;
+  background-color: transparent;
+  padding: 0;
 }
 main #media-section .media-piece .info #likes-info #heart:before {
   content: attr(data-before);
