@@ -136,6 +136,7 @@ main #media-section {
 }
 main #media-section .media-piece {
   width: 31%;
+  height: 100%;
 }
 main #media-section .media-piece .media-content {
   width: 100%;
@@ -143,7 +144,7 @@ main #media-section .media-piece .media-content {
   background-color: transparent;
 }
 main #media-section .media-piece .media-content img, main #media-section .media-piece .media-content video {
-  height: 21em;
+  height: 24em;
   width: 100%;
   object-fit: cover;
   overflow: hidden;

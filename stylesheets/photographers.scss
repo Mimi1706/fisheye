@@ -160,6 +160,7 @@ main{
 
         .media-piece{
             width: 31%;
+            height: 100%;
 
             .media-content{
                 width: 100%;
@@ -167,7 +168,7 @@ main{
                 background-color: transparent;
 
                 img, video{
-                    height:21em;
+                    height:24em;
                     width: 100%;
                     object-fit: cover;
                     overflow: hidden;
