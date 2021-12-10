@@ -22,14 +22,14 @@ const fetchData = async () => {
          if(`${allPhotographers[i].id}` == photographerIdUrl){
             photographerBanner.innerHTML += 
             `
-               <h1 aria-label="photographer name ${allPhotographers[i].name}">${allPhotographers[i].name}</h1>
-               <p class="location" arial-label="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
-               <p class="tagline" arial-label="tagline">${allPhotographers[i].tagline}</p>
-               <ul class="filter" arial-label="tags">${allPhotographers[i].tags.map(tag => `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul> 
+               <h1>${allPhotographers[i].name}</h1>
+               <p class="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
+               <p class="tagline">${allPhotographers[i].tagline}</p>
+               <ul class="filter">${allPhotographers[i].tags.map(tag => `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</ul> 
 
                <button id="contact" onclick="openForm('block')">Contactez-moi</button>
 
-               <img src="content/portraits/${allPhotographers[i].portrait}" aria-label="portrait of ${allPhotographers[i].name}"></img>
+               <img src="content/portraits/${allPhotographers[i].portrait}" alt="${allPhotographers[i].description}"></img>
             `;
 
             // Ajout du prix dans le infos-window
