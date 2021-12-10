@@ -33,27 +33,27 @@
             <h1 id="Photographer-Name">Contactez-moi </br></h1>
             
             <div><label for="firstName" >Prénom</label></br>
-            <input type="text" name="firstName" id="firstName-field" input="firstName" aria-labelledby="Fenêtre de saisie du prénom"></div>
+            <input type="text" name="firstName" id="firstName-field" input="firstName" aria-labelledby="champ de saisie du prénom"></div>
 
             <div><label for="lastName">Nom</label></br>
-            <input type="text" name="lastName" id="lastName-field" input="lastName" aria-labelledby="Fenêtre de saisie du nom"></div>
+            <input type="text" name="lastName" id="lastName-field" input="lastName" aria-labelledby="champ de saisie du nom"></div>
 
             <div><label for="email">Email</label></br>
-            <input type="text" name="mail" id="email-field" input="mail" aria-labelledby="Fenêtre de saisie de l'email"></div>
+            <input type="text" name="mail" id="email-field" input="mail" aria-labelledby="champ de saisie de l'email"></div>
 
             <div><label for="message">Votre message</label></br>
-            <textarea type="text" name="message" id="message-field" input="message" aria-labelledby="Fenêtre de saisie du message"></textarea></div>
+            <textarea type="text" name="message" id="message-field" input="message" aria-labelledby="champ de saisie du message"></textarea></div>
 
-            <input type="submit" id="submit-btn" class="submit-btn" value="Envoyer" aria-labelledby="Envoyer le formulaire"/>
+            <input type="submit" id="submit-btn" class="submit-btn" value="Envoyer" aria-labelledby="envoyer le formulaire"/>
 
-            <button onclick="closeForm('none')" class="close-btn" aria-labelledby="Bouton de fermeture du formulaire"></button>
+            <button onclick="closeForm('none')" class="close-btn" aria-labelledby="bouton de fermeture du formulaire"></button>
         </form>
 
         <!-- FENÊTRE D'INFORMATION (LIKES + PRIX/JOUR) -->
-        <div id="infos-window" aria-label="Fenêtre d'information sur les Likes et le prix">
+        <aside id="infos-window" aria-label="Fenêtre d'information sur les Likes et le prix">
             <span id="all-likes"></span>
             <span id="day-price"></span>
-        </div>
+        </aside>
 
         <!-- LISTE DE FILTRES -->
         <nav class="media-filters flex">
@@ -66,7 +66,7 @@
         </nav>
 
         <!-- SECTION DES MÉDIAS -->
-        <section id="media-section" aria-label="section de contenu media"></section>
+        <section id="media-section" aria-labelledby="section des travaux du photographe"></section>
 
     </main>
 

@@ -7,6 +7,7 @@ const fetchData = async () => {
       return response.json();
    }) 
 
+   
    // Génère les profils des photographes avec un template
    .then (function(dataJson){
       let allPhotographers = dataJson.photographers;
