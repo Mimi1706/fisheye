@@ -113,7 +113,7 @@ async function asyncCall() {
             // Crée le conteneur pour le media
             dom.innerHTML = `
         
-                <div class="lightboxContent">
+                <div class="lightbox-content-wrapper">
                 <div class="lightboxMedia"></div>
                 <h1 id="lightboxMedia-title"></h1>
                 </div>
@@ -121,14 +121,9 @@ async function asyncCall() {
                 <button id="lightbox-previous-button" aria-label="Fermeture de l'aperçu"></button>
                 <button id="lightbox-next-button" aria-label="Oeuvre suivante"></button>
         
-                <button onclick="closelightbox()" id="lightbox-close-button" aria-label="Oeuvre précédente"></button>
+                <button id="lightbox-close-button" aria-label="Oeuvre précédente"></button>
     
             `
-
-            // Aria-labels
-            document.getElementById('main-content').setAttribute('aria-hidden', 'true');
-            document.getElementById('header').setAttribute('aria-hidden', 'true');
-            document.getElementById('infos-window').setAttribute('aria-hidden', 'true');
 
             dom.querySelector('#lightbox-close-button').addEventListener('click', this.close.bind(this))
             dom.querySelector('#lightbox-previous-button').addEventListener('click', this.previous.bind(this))
@@ -145,23 +140,14 @@ async function asyncCall() {
 
 asyncCall();
 
-
-function closelightbox(){
-
-    // Aria-labels
-    document.getElementById('main-content').setAttribute('aria-hidden', 'false');
-    document.getElementById('header').setAttribute('aria-hidden', 'false');
-    document.getElementById('infos-window').setAttribute('aria-hidden', 'false');
-}
-
 // Fonction pour cacher la barre de scroll (utilisée lors du clic sur un média)
 function unloadScrollBars() {
     document.body.style.overflow = 'hidden';  // firefox, chrome
     document.body.scroll = "no"; // ie 
-  }
+}
 
 // Fonction pour afficher la barre de scroll (utilisée lors de la fermeture de la lightbox)
 function reloadScrollBars() {
     document.body.style.overflow = 'auto';  // firefox, chrome
     document.body.scroll = "yes"; // ie 
-  }     
+}     

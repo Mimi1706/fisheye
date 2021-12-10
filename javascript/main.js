@@ -7,7 +7,6 @@ const fetchData = async () => {
       return response.json();
    }) 
 
-   
    // Génère les profils des photographes avec un template
    .then (function(dataJson){
       let allPhotographers = dataJson.photographers;
@@ -19,7 +18,7 @@ const fetchData = async () => {
          `
          <article class="${allPhotographers[i].tags.join(" ")} photographer">
             <a href="photographers.html?id=${allPhotographers[i].id}">
-            <img src="content/portraits/${allPhotographers[i].portrait}" alt="${allPhotographers[i].description}"></img>
+            <img src="content/portraits/${allPhotographers[i].portrait}"></img>
             </br><h2>${allPhotographers[i].name}</h2></a>
             <p class="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
             <p class="tagline">${allPhotographers[i].tagline}</p>

@@ -8,8 +8,7 @@
       "tags": ["portrait", "events", "travel", "animals"],
       "tagline": "Voir le beau dans le quotidien",
       "price": 400,
-      "portrait": "MimiKeel.jpg",
-      "description": "Portrait de Mimi Keel"
+      "portrait": "MimiKeel.jpg"
     },
     {
       "name": "Ellie-Rose Wilkens",
@@ -19,8 +18,7 @@
       "tags": ["sport", "architecture"],
       "tagline": "Capturer des compositions complexes",
       "price": 250,
-      "portrait": "EllieRoseWilkens.jpg",
-      "description": "Portrait d'Ellie-Rose Wilkens"
+      "portrait": "EllieRoseWilkens.jpg"
     },
     {
       "name": "Tracy Galindo",
@@ -30,8 +28,7 @@
       "tags": ["art", "fashion", "events"],
       "tagline": "Photographe freelance",
       "price": 500,
-      "portrait": "TracyGalindo.jpg",
-      "description": "Portrait Tracy Galindo"
+      "portrait": "TracyGalindo.jpg"
     },
     {
       "name": "Nabeel Bradford",
@@ -41,8 +38,7 @@
       "tags": ["travel", "portrait"],
       "tagline": "Toujours aller de l'avant",
       "price": 350,
-      "portrait": "NabeelBradford.jpg",
-      "description": "Portrait de Nabeel Bradford"
+      "portrait": "NabeelBradford.jpg"
     },
     {
       "name": "Rhode Dubois",
@@ -52,8 +48,7 @@
       "tags": ["sport", "fashion", "events", "animals"],
       "tagline": "Je crée des souvenirs",
       "price": 275,
-      "portrait": "RhodeDubois.jpg",
-      "description": "Portrait de Rhode Dubois"
+      "portrait": "RhodeDubois.jpg"
     },
     {
       "name": "Marcel Nikolic",
@@ -63,8 +58,7 @@
       "tags": ["travel", "architecture"],
       "tagline": "Toujours à la recherche de LA photo",
       "price": 300,
-      "portrait": "MarcelNikolic.jpg",
-      "description": "Portrait de Marcel Nikolic"
+      "portrait": "MarcelNikolic.jpg"
     }
   ],
   "media": [
@@ -199,7 +193,7 @@
       "likes": 58,
       "date": "2018-07-17",
       "price": 70,
-      "description": "Couple d'un homme albino et d'une femme africaine prenant la pose"
+      "description": "Couple d'un homme et d'une femme prenant la pose"
     },
     {
       "id": 32958383,
@@ -288,7 +282,7 @@
       "likes": 23,
       "date": "2017-03-18",
       "price": 45,
-      "description": "Vidéo d'un paysage vue d'oiseau d'un massif rocheux"
+      "description": "Vidéo d'un paysage vue de haut d'un massif rocheux"
     },
     {
       "id": 343423425,
