@@ -25,7 +25,7 @@ const fetchData = async () => {
                <h1>${allPhotographers[i].name}</h1>
                <p class="location" aria-labelledby="localisation du photographe">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
                <p class="tagline" aria-labelledby="phrase fétiche du photographe">${allPhotographers[i].tagline}</p>
-               <ul class="filter" aria-labelledby="tags du photographe" tabindex="0">${allPhotographers[i].tags.map(tag => `<li data-filter="${tag}">#${tag}</li>`).join(" ")} </ul> 
+               <ul class="filter" aria-labelledby="tags du photographe">${allPhotographers[i].tags.map(tag => `<li data-filter="${tag}">#${tag}</li>`).join(" ")} </ul> 
 
                <button id="contact" onclick="openForm('block')" aria-labelledby="bouton de contact du photographe">Contactez-moi</button>
 
@@ -51,11 +51,11 @@ const fetchData = async () => {
                   allMediaContent.innerHTML +=
                   `
                      <article class="media-piece">
-                     <button class="media-content" aria-label="Bouton d'ouverture de l'aperçu de cette oeuvre" alt="${allMedia[x].description}"><img src="content/media/${allPhotographers[i].id}/${allMedia[x].image}" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}" alt="${allMedia[x].description}"></img></button>
+                     <button class="media-content" aria-label="Bouton d'aperçu de cette oeuvre ${allMedia[x].description}"><img src="content/media/${allPhotographers[i].id}/${allMedia[x].image}" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}" alt="${allMedia[x].description}"></img></button>
                      <div class="info">
                      <h2 id="media-content-title">${allMedia[x].title}</h2>
                      <div id="likes-info"><span class="nb-likes">${allMedia[x].likes}</span>
-                     <button id="heart">&#9825;</button></div>
+                     <button id="heart" aria-label="J'aime">&#9825;</button></div>
                      </div> 
                      </article>
                   `;
@@ -65,11 +65,11 @@ const fetchData = async () => {
                   allMediaContent.innerHTML +=
                   `
                      <article class="media-piece">
-                     <button class="media-content" aria-label="Ouverture de l'aperçu de cette oeuvre" alt="${allMedia[x].description}"><video src="content/media/${allPhotographers[i].id}/${allMedia[x].video}" alt="${allMedia[x].description}" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}"></video></button>
+                     <button class="media-content" aria-label="Bouton d'aperçu de cette oeuvre ${allMedia[x].description}"><video src="content/media/${allPhotographers[i].id}/${allMedia[x].video}" alt="${allMedia[x].description}" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}"></video></button>
                      <div class="info">
                      <h2 id="media-content-title">${allMedia[x].title}</h2>
                      <div id="likes-info"><span class="nb-likes">${allMedia[x].likes}</span>
-                     <button id="heart">&#9825;</button></div>
+                     <button id="heart" aria-label="J'aime">&#9825;</button></div>
                      </div>
                      </article>
                   `;

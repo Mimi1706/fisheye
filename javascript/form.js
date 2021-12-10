@@ -32,9 +32,9 @@ function closeForm(displayStyle){
     document.getElementById('contact').style.display = 'block';
 
     // Aria-labels
-    document.getElementById('main-content').setAttribute('aria-hidden', 'false');
-    document.getElementById('header').setAttribute('aria-hidden', 'false');
-    document.getElementById('infos-window').setAttribute('aria-hidden', 'false');
+    document.getElementById('main-content').removeAttribute('aria-hidden', 'true');
+    document.getElementById('header').removeAttribute('aria-hidden', 'true');
+    document.getElementById('infos-window').removeAttribute('aria-hidden', 'true');
 }
 
 // Fonction pour afficher la barre de scroll (utilisée lors de la fermeture du formulaire)

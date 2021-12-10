@@ -20,6 +20,8 @@ async function asyncCall() {
 
             allmedia.forEach(media => media.addEventListener('click', e => {
 
+                document.getElementById('main-content').style.display = 'none';
+
                 let mediaSection = document.getElementById('media-section');
                 let allmedia = Array.from(mediaSection.querySelectorAll('.media-content'))
 
@@ -46,6 +48,13 @@ async function asyncCall() {
             reloadScrollBars()
             this.element.parentElement.removeChild(this.element)
             document.removeEventListener('keyup', this.onKeyUp)
+
+            document.getElementById('main-content').style.display = 'block';
+            
+            // Aria-labels
+            document.getElementById('main-content').removeAttribute('aria-hidden', 'true');
+            document.getElementById('header').removeAttribute('aria-hidden', 'true');
+            document.getElementById('infos-window').removeAttribute('aria-hidden', 'true');
         }
 
         // Fonction pour [fermer/suivant/précédent] de la lightbox (clavier)
@@ -86,6 +95,7 @@ async function asyncCall() {
             lightboxContent.innerHTML = '';
             this.media = media
             var cloneMedia = media.cloneNode(true);
+            cloneMedia.firstChild.setAttribute('tabindex','0')
 
             lightboxContent.appendChild(cloneMedia.firstChild)
 
@@ -118,12 +128,16 @@ async function asyncCall() {
                 <h1 id="lightboxMedia-title"></h1>
                 </div>
                 
-                <button id="lightbox-previous-button" aria-label="Fermeture de l'aperçu"></button>
+                <button id="lightbox-previous-button" aria-label="Oeuvre précédente"></button>
                 <button id="lightbox-next-button" aria-label="Oeuvre suivante"></button>
         
-                <button id="lightbox-close-button" aria-label="Oeuvre précédente"></button>
+                <button id="lightbox-close-button" aria-label="Fermeture de l'aperçu"></button>
     
             `
+
+            document.getElementById('main-content').setAttribute('aria-hidden', 'true');
+            document.getElementById('header').setAttribute('aria-hidden', 'true');
+            document.getElementById('infos-window').setAttribute('aria-hidden', 'true');
 
             dom.querySelector('#lightbox-close-button').addEventListener('click', this.close.bind(this))
             dom.querySelector('#lightbox-previous-button').addEventListener('click', this.previous.bind(this))
