@@ -51,7 +51,7 @@ const fetchData = async () => {
                   allMediaContent.innerHTML +=
                   `
                      <article class="media-piece">
-                     <button class="media-content" aria-label="Bouton d'aperçu de cette oeuvre ${allMedia[x].description}"><img src="content/media/${allPhotographers[i].id}/${allMedia[x].image}" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}" alt="${allMedia[x].description}"></img></button>
+                     <button class="media-content" aria-label="Bouton d'aperçu de cette oeuvre : ${allMedia[x].description}"><img src="content/media/${allPhotographers[i].id}/${allMedia[x].image}" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}" alt="${allMedia[x].description}"></img></button>
                      <div class="info">
                      <h2 id="media-content-title">${allMedia[x].title}</h2>
                      <div id="likes-info"><span class="nb-likes">${allMedia[x].likes}</span>
@@ -65,7 +65,7 @@ const fetchData = async () => {
                   allMediaContent.innerHTML +=
                   `
                      <article class="media-piece">
-                     <button class="media-content" aria-label="Bouton d'aperçu de cette oeuvre ${allMedia[x].description}"><video src="content/media/${allPhotographers[i].id}/${allMedia[x].video}" alt="${allMedia[x].description}" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}"></video></button>
+                     <button class="media-content" aria-label="Bouton d'aperçu de cette oeuvre : ${allMedia[x].description}"><video src="content/media/${allPhotographers[i].id}/${allMedia[x].video}" alt="${allMedia[x].description}" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}"></video></button>
                      <div class="info">
                      <h2 id="media-content-title">${allMedia[x].title}</h2>
                      <div id="likes-info"><span class="nb-likes">${allMedia[x].likes}</span>
