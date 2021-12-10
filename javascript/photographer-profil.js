@@ -53,9 +53,9 @@ const fetchData = async () => {
                      <article class="media-piece">
                      <button class="media-content"><img src="content/media/${allPhotographers[i].id}/${allMedia[x].image}" alt="${allMedia[x].description}" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}"></img></button>
                      <div class="info">
-                     <h2 id="media-content-title" aria-labelledby="title ${allMedia[x].title}">${allMedia[x].title}</h2>
-                     <div id="likes-info" aria-label="number of likes"><span class="nb-likes" aria-labelledby="number of likes">${allMedia[x].likes}</span>
-                     <button id="heart" aria-labelledby="click to like">&#9825;</button></div>
+                     <h2 id="media-content-title">${allMedia[x].title}</h2>
+                     <div id="likes-info"><span class="nb-likes">${allMedia[x].likes}</span>
+                     <button id="heart">&#9825;</button></div>
                      </div> 
                      </article>
                   `;
@@ -67,9 +67,9 @@ const fetchData = async () => {
                      <article class="media-piece">
                      <button class="media-content"><video src="content/media/${allPhotographers[i].id}/${allMedia[x].video}" alt="${allMedia[x].description}" data-name="${allMedia[x].title}" data-date="${allMedia[x].date}"></video></button>
                      <div class="info">
-                     <h2 id="media-content-title" aria-labelledby="title ${allMedia[x].title}">${allMedia[x].title}</h2>
-                     <div id="likes-info" aria-label="number of likes"><span class="nb-likes" aria-labelledby="number of likes">${allMedia[x].likes}</span>
-                     <button id="heart" aria-labelledby="click to like">&#9825;</button></div>
+                     <h2 id="media-content-title">${allMedia[x].title}</h2>
+                     <div id="likes-info"><span class="nb-likes">${allMedia[x].likes}</span>
+                     <button id="heart">&#9825;</button></div>
                      </div>
                      </article>
                   `;

@@ -16,9 +16,9 @@ const fetchData = async () => {
          photographersSection.innerHTML += 
 
          `
-         <article class="${allPhotographers[i].tags.join(" ")} photographer" aria-label="${allPhotographers[i].name} profile">
+         <article class="${allPhotographers[i].tags.join(" ")} photographer">
             <a href="photographers.html?id=${allPhotographers[i].id}">
-            <img src="content/portraits/${allPhotographers[i].portrait}" alt="portrait of ${allPhotographers[i].name}"></img>
+            <img src="content/portraits/${allPhotographers[i].portrait}" alt="${allPhotographers[i].description}"></img>
             </br><h2>${allPhotographers[i].name}</h2></a>
             <p class="location">${allPhotographers[i].city}, ${allPhotographers[i].country}</p>
             <p class="tagline">${allPhotographers[i].tagline}</p>
