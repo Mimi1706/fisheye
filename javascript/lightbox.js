@@ -113,13 +113,15 @@ async function asyncCall() {
             // Crée le conteneur pour le media
             dom.innerHTML = `
         
-                <div class="lightboxContent"><div class="lightboxMedia"></div>
-                <h1 id="lightboxMedia-title"></h1></div>
+                <div class="lightboxContent">
+                <div class="lightboxMedia"></div>
+                <h1 id="lightboxMedia-title"></h1>
+                </div>
                 
-                <button id="lightbox-previous-button" aria-label="previous">Précédent</button>
-                <button id="lightbox-next-button" aria-label="next">Suivant</button>
+                <button id="lightbox-previous-button" aria-label="Fermeture de l'aperçu"></button>
+                <button id="lightbox-next-button" aria-label="Oeuvre suivante"></button>
         
-                <button onclick="closelightbox()" id="lightbox-close-button" aria-label="close">Fermer</button>
+                <button onclick="closelightbox()" id="lightbox-close-button" aria-label="Oeuvre précédente"></button>
     
             `
 
