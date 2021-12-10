@@ -9,7 +9,7 @@
       "tagline": "Voir le beau dans le quotidien",
       "price": 400,
       "portrait": "MimiKeel.jpg",
-      "alt-text": "Portrait de Mimi Keel"
+      "description": "Portrait de Mimi Keel"
     },
     {
       "name": "Ellie-Rose Wilkens",
@@ -20,7 +20,7 @@
       "tagline": "Capturer des compositions complexes",
       "price": 250,
       "portrait": "EllieRoseWilkens.jpg",
-      "alt-text": "Portrait d'Ellie-Rose Wilkens"
+      "description": "Portrait d'Ellie-Rose Wilkens"
     },
     {
       "name": "Tracy Galindo",
@@ -31,7 +31,7 @@
       "tagline": "Photographe freelance",
       "price": 500,
       "portrait": "TracyGalindo.jpg",
-      "alt-text": "Portrait Tracy Galindo"
+      "description": "Portrait Tracy Galindo"
     },
     {
       "name": "Nabeel Bradford",
@@ -42,7 +42,7 @@
       "tagline": "Toujours aller de l'avant",
       "price": 350,
       "portrait": "NabeelBradford.jpg",
-      "alt-text": "Portrait de Nabeel Bradford"
+      "description": "Portrait de Nabeel Bradford"
     },
     {
       "name": "Rhode Dubois",
@@ -53,7 +53,7 @@
       "tagline": "Je crée des souvenirs",
       "price": 275,
       "portrait": "RhodeDubois.jpg",
-      "alt-text": "Portrait de Rhode Dubois"
+      "description": "Portrait de Rhode Dubois"
     },
     {
       "name": "Marcel Nikolic",
@@ -64,7 +64,7 @@
       "tagline": "Toujours à la recherche de LA photo",
       "price": 300,
       "portrait": "MarcelNikolic.jpg",
-      "alt-text": "Portrait de Marcel Nikolic"
+      "description": "Portrait de Marcel Nikolic"
     }
   ],
   "media": [
@@ -77,7 +77,7 @@
       "likes": 62,
       "date": "2011-12-08",
       "price": 55,
-      "alt-text": "Femme en tenue de sport jaune"
+      "description": "Femme en tenue de sport jaune"
     },
     {
       "id": 8520927,
@@ -88,7 +88,7 @@
       "likes": 11,
       "date": "2011-11-06",
       "price": 55,
-      "alt-text": "Femme accroupie au milieu d'une route"
+      "description": "Femme accroupie au milieu d'une route"
     },
     {
       "id": 9025895,
@@ -99,7 +99,7 @@
       "likes": 72,
       "date": "2013-08-12",
       "price": 55,
-      "alt-text": "Femme avec un sac rouge et habillée avec des vêtements à rayures jaune, bleue et noire"
+      "description": "Femme avec un sac rouge et habillée avec des vêtements à rayures jaune, bleue et noire"
     },
     {
       "id": 9275938,
@@ -110,7 +110,7 @@
       "likes": 69,
       "date": "2018-02-22",
       "price": 55,
-      "alt-text": "Décor de cérémonie de marriage"
+      "description": "Décor de cérémonie de marriage"
     },
     {
       "id": 2053494,
@@ -121,7 +121,7 @@
       "likes": 2,
       "date": "2020-05-25",
       "price": 55,
-      "alt-text": "Couple faisant face à un public tenant des feux d'artifices compact"
+      "description": "Couple faisant face à un public tenant des feux d'artifices compact"
     },
     {
       "id": 7324238,
@@ -132,7 +132,7 @@
       "likes": 33,
       "date": "2019-06-12",
       "price": 55,
-      "alt-text": "Décor de fête d'anniversaire avec une table couverte et deux ballons affichant les chiffres 18"
+      "description": "Décor de fête d'anniversaire avec une table couverte et deux ballons affichant les chiffres 18"
     },
     {
       "id": 8328953,
@@ -143,7 +143,7 @@
       "likes": 24,
       "date": "2011-12-08",
       "price": 100,
-      "alt-text": "Vidéo d'une sculpture d'un cheval en bois grandeur nature"
+      "description": "Vidéo d'une sculpture d'un cheval en bois grandeur nature"
     },
     {
       "id": 7502053,
@@ -154,7 +154,7 @@
       "likes": 88,
       "date": "2007-05-07",
       "price": 55,
-      "alt-text": "Oeuvre d'art d'un homme en blanc et orange avec un triangle blanc peint au milieu"
+      "description": "Oeuvre d'art d'un homme en blanc et orange avec un triangle blanc peint au milieu"
     },
     {
       "id": 8523492,
@@ -165,7 +165,7 @@
       "likes": 24,
       "date": "2018-05-05",
       "price": 55,
-      "alt-text": "Tunnel souterrain tamisé en violet et recouvert de graffiti "
+      "description": "Tunnel souterrain tamisé en violet et recouvert de graffiti "
     },
     {
       "id": 75902334,
@@ -176,7 +176,7 @@
       "likes": 75,
       "date": "2019-11-25",
       "price": 55,
-      "alt-text": "Oeuvre d'art moderne de pigeons rouges et bleus"
+      "description": "Oeuvre d'art moderne de pigeons rouges et bleus"
     },
 
     {
@@ -188,7 +188,7 @@
       "likes": 52,
       "date": "2013-02-30",
       "price": 70,
-      "alt-text": "Quatre sportifs alignés avec des pagaies"
+      "description": "Quatre sportifs alignés avec des pagaies"
     },
     {
       "id": 92758372,
@@ -199,7 +199,7 @@
       "likes": 58,
       "date": "2018-07-17",
       "price": 70,
-      "alt-text": "Couple d'un homme albino et d'une femme africaine prenant la pose"
+      "description": "Couple d'un homme albino et d'une femme africaine prenant la pose"
     },
     {
       "id": 32958383,
@@ -210,7 +210,7 @@
       "likes": 11,
       "date": "2019-08-12",
       "price": 70,
-      "alt-text": "Jeune femme en robe rouge et basket blanches descendant un escalier"
+      "description": "Jeune femme en robe rouge et basket blanches descendant un escalier"
     },
     {
       "id": 928587383,
@@ -221,7 +221,7 @@
       "likes": 2,
       "date": "2019-01-02",
       "price": 70,
-      "alt-text": "Réunion de cinq participants"
+      "description": "Réunion de cinq participants"
     },
     {
       "id": 725639493,
@@ -232,7 +232,7 @@
       "likes": 3,
       "date": "2019-05-20",
       "price": 70,
-      "alt-text": "Homme debout face à un public"
+      "description": "Homme debout face à un public"
     },
     {
       "id": 23394384,
@@ -243,7 +243,7 @@
       "likes": 52,
       "date": "2019-07-18",
       "price": 70,
-      "alt-text": "Musicienne assise face à un piano électrique"
+      "description": "Musicienne assise face à un piano électrique"
     },
     {
       "id": 87367293,
@@ -254,7 +254,7 @@
       "likes": 23,
       "date": "2018-02-22",
       "price": 70,
-      "alt-text": "Femme tenant un micro"
+      "description": "Femme tenant un micro"
     },
     {
       "id": 593834784,
@@ -265,7 +265,7 @@
       "likes": 52,
       "date": "2017-03-13",
       "price": 70,
-      "alt-text": "Cerf dans paysage de nature faisant face à la caméra"
+      "description": "Cerf dans paysage de nature faisant face à la caméra"
     },
     {
       "id": 83958935,
@@ -276,7 +276,7 @@
       "likes": 52,
       "date": "2016-06-12",
       "price": 70,
-      "alt-text": "Vidéo d'un chiot jouant avec sa laisse"
+      "description": "Vidéo d'un chiot jouant avec sa laisse"
     },
 
     {
@@ -288,7 +288,7 @@
       "likes": 23,
       "date": "2017-03-18",
       "price": 45,
-      "alt-text": "Vidéo d'un paysage vue d'oiseau d'un massif rocheux"
+      "description": "Vidéo d'un paysage vue d'oiseau d'un massif rocheux"
     },
     {
       "id": 343423425,
@@ -299,7 +299,7 @@
       "likes": 101,
       "date": "2017-04-03",
       "price": 45,
-      "alt-text": "Bain public naturel à ciel ouvert"
+      "description": "Bain public naturel à ciel ouvert"
     },
     {
       "id": 73434243,
@@ -310,7 +310,7 @@
       "likes": 99,
       "date": "2018-04-30",
       "price": 45,
-      "alt-text": "Longue route défilant vers l'horizon"
+      "description": "Longue route défilant vers l'horizon"
     },
     {
       "id": 23425523,
@@ -321,7 +321,7 @@
       "likes": 34,
       "date": "2016-04-05",
       "price": 45,
-      "alt-text": "Pont entouré d'arbres"
+      "description": "Pont entouré d'arbres"
     },
     {
       "id": 23134513,
@@ -332,7 +332,7 @@
       "likes": 23,
       "date": "2017-03-18",
       "price": 45,
-      "alt-text": "Tête de barque navigant sur l'eau face à des massifs rocheux"
+      "description": "Tête de barque navigant sur l'eau face à des massifs rocheux"
     },
     {
       "id": 92352352,
@@ -343,7 +343,7 @@
       "likes": 66,
       "date": "2018-05-24",
       "price": 45,
-      "alt-text": "Portrait d'une femme rousse souriante"
+      "description": "Portrait d'une femme rousse souriante"
     },
     {
       "id": 34513453,
@@ -354,7 +354,7 @@
       "likes": 52,
       "date": "2017-04-21",
       "price": 45,
-      "alt-text": "Portrait noir et blanc d'un homme"
+      "description": "Portrait noir et blanc d'un homme"
     },
     {
       "id": 23523533,
@@ -365,7 +365,7 @@
       "likes": 95,
       "date": "2018-11-02",
       "price": 45,
-      "alt-text": "Portrait noir et blanc d'une femme"
+      "description": "Portrait noir et blanc d'une femme"
     },
     {
       "id": 525834234,
@@ -376,7 +376,7 @@
       "likes": 25,
       "date": "2019-01-02",
       "price": 45,
-      "alt-text": "Portrait noir et blanc d'un homme âgé tenant une cigarette"
+      "description": "Portrait noir et blanc d'un homme âgé tenant une cigarette"
     },
 
     {
@@ -388,7 +388,7 @@
       "likes": 88,
       "date": "2019-02-03",
       "price": 45,
-      "alt-text": "Paysage de collines et de rochers"
+      "description": "Paysage de collines et de rochers"
     },
     {
       "id": 625025343,
@@ -399,7 +399,7 @@
       "likes": 85,
       "date": "2019-04-03",
       "price": 45,
-      "alt-text": "Vue d'une ville côtière sur les rochers"
+      "description": "Vue d'une ville côtière sur les rochers"
     },
     {
       "id": 2525345343,
@@ -410,7 +410,7 @@
       "likes": 34,
       "date": "2019-04-07",
       "price": 45,
-      "alt-text": "Portrait noir et blanc d'une petite fille faisant la grimace"
+      "description": "Portrait noir et blanc d'une petite fille faisant la grimace"
     },
     {
       "id": 2523434634,
@@ -421,7 +421,7 @@
       "likes": 63,
       "date": "2019-04-07",
       "price": 45,
-      "alt-text": "Portrait d'une femme dénudée"
+      "description": "Portrait d'une femme dénudée"
     },
     {
       "id": 398847109,
@@ -432,7 +432,7 @@
       "likes": 55,
       "date": "2019-06-20",
       "price": 45,
-      "alt-text": "portrait d'une femme en noir et blanc"
+      "description": "portrait d'une femme en noir et blanc"
     },
     {
       "id": 2534342,
@@ -443,7 +443,7 @@
       "likes": 25,
       "date": "2019-06-21",
       "price": 45,
-      "alt-text": "Table servie et décorée sur une plage"
+      "description": "Table servie et décorée sur une plage"
     },
     {
       "id": 65235234,
@@ -454,7 +454,7 @@
       "likes": 52,
       "date": "2019-06-25",
       "price": 45,
-      "alt-text": "Couple de mariés se regardant"
+      "description": "Couple de mariés se regardant"
     },
     {
       "id": 23523434,
@@ -465,7 +465,7 @@
       "likes": 77,
       "date": "2019-06-28",
       "price": 45,
-      "alt-text": "Couple de mariés prenant la pose"
+      "description": "Couple de mariés prenant la pose"
     },
     {
       "id": 5234343,
@@ -476,7 +476,7 @@
       "likes": 142,
       "date": "2019-08-23",
       "price": 60,
-      "alt-text": "Vidéo de chevaux galopant dans la nature"
+      "description": "Vidéo de chevaux galopant dans la nature"
     },
     {
       "id": 95234343,
@@ -487,7 +487,7 @@
       "likes": 59,
       "date": "2019-07-02",
       "price": 60,
-      "alt-text": "Oiseau multicolore perché sur une branche"
+      "description": "Oiseau multicolore perché sur une branche"
     },
 
     {
@@ -499,7 +499,7 @@
       "likes": 25,
       "date": "2019-04-03",
       "price": 60,
-      "alt-text": "Vue sur une rue japonaise avec deux femmes en kimono"
+      "description": "Vue sur une rue japonaise avec deux femmes en kimono"
     },
     {
       "id": 2523434,
@@ -510,7 +510,7 @@
       "likes": 53,
       "date": "2019-05-06",
       "price": 60,
-      "alt-text": "Canal surplombé de maisons sous un soleil couchant"
+      "description": "Canal surplombé de maisons sous un soleil couchant"
     },
     {
       "id": 95293534,
@@ -521,7 +521,7 @@
       "likes": 33,
       "date": "2019-05-12",
       "price": 60,
-      "alt-text": "Paysage d'un massif rocheux et d'une forêt surplombant une étendue d'eau"
+      "description": "Paysage d'un massif rocheux et d'une forêt surplombant une étendue d'eau"
     },
     {
       "id": 356234343,
@@ -532,7 +532,7 @@
       "likes": 53,
       "date": "2019-06-20",
       "price": 60,
-      "alt-text": "Vélo adossé contre la rambarde d'un escalier et d'un lampadaire"
+      "description": "Vélo adossé contre la rambarde d'un escalier et d'un lampadaire"
     },
     {
       "id": 235234343,
@@ -543,7 +543,7 @@
       "likes": 63,
       "date": "2019-06-26",
       "price": 60,
-      "alt-text": "Porte indienne ouvrant sur la vue panoramique d'une ville"
+      "description": "Porte indienne ouvrant sur la vue panoramique d'une ville"
     },
     {
       "id": 6234234343,
@@ -554,7 +554,7 @@
       "likes": 52,
       "date": "2019-06-30",
       "price": 60,
-      "alt-text": "Photo du toit du Kremlin de Saint Petersbourg"
+      "description": "Photo du toit du Kremlin de Saint Petersbourg"
     },
     {
       "id": 6525666253,
@@ -565,7 +565,7 @@
       "likes": 63,
       "date": "2019-07-20",
       "price": 60,
-      "alt-text": "Vue panoramique d'une ville sur les rochers"
+      "description": "Vue panoramique d'une ville sur les rochers"
     },
     {
       "id": 98252523433,
@@ -576,7 +576,7 @@
       "likes": 88,
       "date": "2020-01-05",
       "price": 60,
-      "alt-text": "Tour de pise en vue contre-plongée"
+      "description": "Tour de pise en vue contre-plongée"
     },
     {
       "id": 9259398453,
@@ -587,7 +587,7 @@
       "likes": 57,
       "date": "2020-01-20",
       "price": 65,
-      "alt-text": "Vue du ciel de routes traversant la ville"
+      "description": "Vue du ciel de routes traversant la ville"
     },
     {
       "id": 3523523534,
@@ -598,7 +598,7 @@
       "likes": 54,
       "date": "2020-05-05",
       "price": 60,
-      "alt-text": "Immeuble style haussmannien au toit bleu et aux murs orange"
+      "description": "Immeuble style haussmannien au toit bleu et aux murs orange"
     },
 
     {
@@ -610,7 +610,7 @@
       "likes": 150,
       "date": "2018-02-30",
       "price": 70,
-      "alt-text": "Vidéo d'une femme effectuant des acrobaties dans les airs"
+      "description": "Vidéo d'une femme effectuant des acrobaties dans les airs"
     },
     {
       "id": 235234343,
@@ -621,7 +621,7 @@
       "likes": 101,
       "date": "2018-03-05",
       "price": 65,
-      "alt-text": "Femme gravissant une falaise à mains nues"
+      "description": "Femme gravissant une falaise à mains nues"
     },
     {
       "id": 235343222,
@@ -632,7 +632,7 @@
       "likes": 103,
       "date": "2018-03-10",
       "price": 70,
-      "alt-text": "Surfeur surfant dans un tube"
+      "description": "Surfeur surfant dans un tube"
     },
     {
       "id": 7775342343,
@@ -643,7 +643,7 @@
       "likes": 77,
       "date": "2018-04-16",
       "price": 50,
-      "alt-text": "Skieur en plein saut dans les airs"
+      "description": "Skieur en plein saut dans les airs"
     },
     {
       "id": 9253445784,
@@ -654,7 +654,7 @@
       "likes": 88,
       "date": "2018-04-22",
       "price": 65,
-      "alt-text": "Femmes athlètes en train de courir"
+      "description": "Femmes athlètes en train de courir"
     },
     {
       "id": 22299394,
@@ -665,7 +665,7 @@
       "likes": 95,
       "date": "2018-04-27",
       "price": 70,
-      "alt-text": "Jeune homme sur un skateboard en plein saut"
+      "description": "Jeune homme sur un skateboard en plein saut"
     },
     {
       "id": 3452342633,
@@ -676,7 +676,7 @@
       "likes": 52,
       "date": "2018-05-03",
       "price": 75,
-      "alt-text": "Photo en noir et blanc en vue contre-plongée du toit en verre d'un bâtiment"
+      "description": "Photo en noir et blanc en vue contre-plongée du toit en verre d'un bâtiment"
     },
     {
       "id": 939234243,
@@ -687,7 +687,7 @@
       "likes": 55,
       "date": "2018-05-10",
       "price": 72,
-      "alt-text": "Bâtiment moderne en forme de vague"
+      "description": "Bâtiment moderne en forme de vague"
     },
     {
       "id": 222959233,
@@ -698,7 +698,7 @@
       "likes": 85,
       "date": "2018-05-15",
       "price": 71,
-      "alt-text": "Photo en noir et blanc d'un bâtiment aux formes circulaires"
+      "description": "Photo en noir et blanc d'un bâtiment aux formes circulaires"
     },
     {
       "id": 965933434,
@@ -709,7 +709,7 @@
       "likes": 66,
       "date": "2018-05-20",
       "price": 58,
-      "alt-text": "Architecture d'un bâtiment vu d'en bas"
+      "description": "Architecture d'un bâtiment vu d'en bas"
     },
     {
       "id": 777723343,
@@ -720,7 +720,7 @@
       "likes": 79,
       "date": "2018-05-21",
       "price": 80,
-      "alt-text": "Bâtiments à forme géométrique connectés par un couloir extérieur"
+      "description": "Bâtiments à forme géométrique connectés par un couloir extérieur"
     }
   ]
 }
