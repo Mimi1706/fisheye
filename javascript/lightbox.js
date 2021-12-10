@@ -20,7 +20,7 @@ async function asyncCall() {
 
             allmedia.forEach(media => media.addEventListener('click', e => {
 
-                document.getElementById('main-content').style.display = 'none';
+                document.getElementById('main-content').style.visibility = 'hidden';
 
                 let mediaSection = document.getElementById('media-section');
                 let allmedia = Array.from(mediaSection.querySelectorAll('.media-content'))
@@ -49,7 +49,7 @@ async function asyncCall() {
             this.element.parentElement.removeChild(this.element)
             document.removeEventListener('keyup', this.onKeyUp)
 
-            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('main-content').style.visibility = 'visible';
             
             // Aria-labels
             document.getElementById('main-content').removeAttribute('aria-hidden', 'true');
