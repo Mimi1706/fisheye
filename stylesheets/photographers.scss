@@ -160,12 +160,13 @@ main{
 
         .media-piece{
             width: 31%;
-            height: 100%;
 
             .media-content{
                 width: 100%;
                 border:none;
                 background-color: transparent;
+                margin:0;
+                padding:0;
 
                 img, video{
                     height:24em;
@@ -470,9 +471,14 @@ main{
 
             .media-piece{
                 width: 100%;
+                height: 100%;
 
-                img, video{
-                    height:14em;
+                .media-content{
+                    height: 100%;
+
+                    img, video{
+                        height:17em;
+                    }
                 }
             }
         }
@@ -563,14 +569,11 @@ main{
             .media-piece{
                 width: 48%;
 
-                img, video{
-                    height:30vw;
-                }
             }
         }
     }
 
-    // FORMULAIRE - VERSION MOBILE
+    // FORMULAIRE - VERSION TABLETTE
     #form{
         margin-top:1em;
     }
