@@ -211,8 +211,3 @@ async function asyncCall() {
 } 
 
 asyncCall();
-
-
-document.addEventListener('focusin', function() {
-   console.log('focused: ', document.activeElement)
- }, true);

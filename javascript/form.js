@@ -1,5 +1,4 @@
 // FORMULAIRE
-const closeBtn = document.getElementsByClassName('close-btn');
 const formWindow = document.getElementById('form');
 const formBg = document.getElementById('form-bg');
 
@@ -11,6 +10,7 @@ function openForm(displayStyle){
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     unloadScrollBars();
     document.getElementById('contact').style.display = 'none';
+    document.addEventListener('keyup', this.onKeyUp)
 
     // Aria-labels
     document.getElementById('main-content').setAttribute('aria-hidden', 'true');
@@ -25,16 +25,28 @@ function openForm(displayStyle){
 }
 
 // Bouton de fermeture
-function closeForm(displayStyle){
-    formWindow.style.display = displayStyle;
+function closeForm(){
+    formWindow.style.display = 'none';
     formBg.style.display = 'none';
     reloadScrollBars()
     document.getElementById('contact').style.display = 'block';
+
+    document.removeEventListener('keyup', this.onKeyUp)
 
     // Aria-labels
     document.getElementById('main-content').removeAttribute('aria-hidden', 'true');
     document.getElementById('header').removeAttribute('aria-hidden', 'true');
     document.getElementById('infos-window').removeAttribute('aria-hidden', 'true');
+}
+
+const closeBtn = document.querySelector('#close-btn');
+closeBtn.addEventListener('click', this.closeForm.bind(this))
+
+// Fonction de fermeture pour le clavier (touche ESC)
+function onKeyUp(e) {
+    if (e.key == 'Escape'){
+        closeForm()
+    }
 }
 
 // Fonction pour afficher la barre de scroll (utilisée lors de la fermeture du formulaire)
