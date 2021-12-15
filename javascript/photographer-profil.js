@@ -38,7 +38,7 @@ const fetchData = async () => {
 
             // Ajout du prénom dans contact
             let contactMe = document.getElementById('Photographer-Name');
-            contactMe.innerHTML += allPhotographers[i].name;
+            contactMe.innerHTML += '</br>' + allPhotographers[i].name;
          }
 
          // Génère le contenu media du photographe
@@ -167,6 +167,7 @@ async function asyncCall() {
        }
    }
 
+   // Déclenche la fonction une fois au chargement de la page
    checkSelection()
 
    // LIKES 
@@ -186,14 +187,16 @@ async function asyncCall() {
 
       let emptyHeart = mediaInfos[m].childNodes[2];
 
-      emptyHeart.addEventListener('click', e => {
+      emptyHeart.addEventListener('click', function() {
    
+         // Si le coeur est déjà rempli (possède la class change), le coeur se vide au clic et les likes sont décrémentés
          if(emptyHeart.className == 'change'){
             emptyHeart.setAttribute('data-before', '');
             emptyHeart.classList.remove('change');
             mediaInfos[m].childNodes[0].innerText--;
             fixedAllLikes.innerText--;
 
+         // Si le coeur n'est pas encore rempli (possède la class change), le coeur se remplit au clic et les likes sont incrémentés
          } else{
             emptyHeart.setAttribute('data-before', '\u2665');
             emptyHeart.classList.add('change');

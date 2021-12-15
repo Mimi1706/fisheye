@@ -29,24 +29,24 @@
         <!-- FORMULAIRE -->
         <div id="form-bg"></div>
 
-        <form id="form" role="group" aria-labelledby="Formulaire de contact" role="dialog">
-            <h1 id="Photographer-Name">Contactez-moi </br></h1>
+        <form id="form" aria-label="Formulaire de contact">
+            <h1 id="Photographer-Name">Contactez-moi</h1>
             
-            <div><label for="firstName" >Prénom</label></br>
-            <input type="text" name="firstName" id="firstName-field" input="firstName" aria-labelledby="champ de saisie du prénom"></div>
+            <div><label for="firstName-field" >Prénom</label>
+            <input type="text" name="firstName" id="firstName-field" aria-label="champ de saisie du prénom"></div>
 
-            <div><label for="lastName">Nom</label></br>
-            <input type="text" name="lastName" id="lastName-field" input="lastName" aria-labelledby="champ de saisie du nom"></div>
+            <div><label for="lastName-field">Nom</label>
+            <input type="text" name="lastName" id="lastName-field" aria-label="champ de saisie du nom"></div>
 
-            <div><label for="email">Email</label></br>
-            <input type="text" name="mail" id="email-field" input="mail" aria-labelledby="champ de saisie de l'email"></div>
+            <div><label for="email-field">Email</label>
+            <input type="text" name="mail" id="email-field" aria-label="champ de saisie de l'email"></div>
 
-            <div><label for="message">Votre message</label></br>
-            <textarea type="text" name="message" id="message-field" input="message" aria-labelledby="champ de saisie du message"></textarea></div>
+            <div><label for="message-field">Votre message</label>
+            <textarea name="message" id="message-field" aria-label="champ de saisie du message"></textarea></div>
 
-            <input type="submit" id="submit-btn" class="submit-btn" value="Envoyer" aria-labelledby="envoyer le formulaire"/>
+            <input type="submit" id="submit-btn" class="submit-btn" value="Envoyer" aria-label="envoyer le formulaire"/>
 
-            <button id="close-btn" aria-labelledby="bouton de fermeture du formulaire"></button>
+            <button id="close-btn" aria-label="bouton de fermeture du formulaire"></button>
         </form>
 
         <!-- FENÊTRE D'INFORMATION (LIKES + PRIX/JOUR) -->
@@ -66,14 +66,14 @@
         </nav>
 
         <!-- SECTION DES MÉDIAS -->
-        <section id="media-section" aria-labelledby="section des travaux du photographe"></section>
+        <section id="media-section" aria-label="section des travaux du photographe"></section>
 
     </main>
-
-</body>
 
     <script src="javascript/lightbox.js"></script>
     <script src="javascript/photographer-profil.js"> </script>
     <script src="javascript/form.js"> </script>
+
+</body>
 
 </html>

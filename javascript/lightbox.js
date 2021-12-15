@@ -18,7 +18,8 @@ async function asyncCall() {
 
             let allmedia = document.getElementById('media-section').querySelectorAll('.media-content')
 
-            allmedia.forEach(media => media.addEventListener('click', e => {
+            // À chaque clic sur une image de la galerie, cela génère une lightbox
+            allmedia.forEach(media => media.addEventListener('click', function() {
 
                 document.getElementById('main-content').style.visibility = 'hidden';
 
@@ -31,6 +32,7 @@ async function asyncCall() {
             }))
         }
 
+        // Génère le contenu créée à l'intérieur de la lightbox
         constructor (media, gallery) {
             this.element = this.buildDOM(media)
             this.addMedia(media)
@@ -51,7 +53,7 @@ async function asyncCall() {
 
             document.getElementById('main-content').style.visibility = 'visible';
             
-            // Aria-labels
+            // Enlève les aria-hidden pour pouvoir cibler les éléments suivants:
             document.getElementById('main-content').removeAttribute('aria-hidden', 'true');
             document.getElementById('header').removeAttribute('aria-hidden', 'true');
             document.getElementById('infos-window').removeAttribute('aria-hidden', 'true');
@@ -115,6 +117,7 @@ async function asyncCall() {
             }
         }
 
+        // Génère le contenu pour le dom
         buildDOM (media) {
             const dom = document.createElement('div')
             dom.classList.add('lightbox')
@@ -135,10 +138,12 @@ async function asyncCall() {
     
             `
 
+            // Ajoute des Aria-hidden pour ne pas cibler les éléments suivants:
             document.getElementById('main-content').setAttribute('aria-hidden', 'true');
             document.getElementById('header').setAttribute('aria-hidden', 'true');
             document.getElementById('infos-window').setAttribute('aria-hidden', 'true');
 
+            // Lie les boutons [fermer/précédent/suivant] à leur fonction respective
             dom.querySelector('#lightbox-close-button').addEventListener('click', this.close.bind(this))
             dom.querySelector('#lightbox-previous-button').addEventListener('click', this.previous.bind(this))
             dom.querySelector('#lightbox-next-button').addEventListener('click', this.next.bind(this))
