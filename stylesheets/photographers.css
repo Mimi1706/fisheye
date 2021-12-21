@@ -108,7 +108,7 @@ main .media-filters {
   margin: 0;
   display: flex;
 }
-main .media-filters p {
+main .media-filters #filter-label {
   font-weight: bold;
   align-self: center;
 }
