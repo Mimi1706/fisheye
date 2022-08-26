@@ -9,4 +9,4 @@ Dans le cadre de la [formation de Développeur Front-end](https://openclassrooms
 
 FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux.
 
-![GameOn visuals on all devices](https://github.com/Mimi1706/HanNguyen_6_021121/blob/main/Fisheye%20visuals.jpg?raw=true)
+![Visuals on all devices](https://github.com/Mimi1706/HanNguyen_6_021121/blob/main/Fisheye%20visuals.jpg?raw=true)
